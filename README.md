@@ -15,7 +15,7 @@
 
 [在线体验](https://color19.github.io/studyroom/) · [数据格式](docs/FORMAT.md) · [AI 流程](docs/AI_PIPELINE.md) · [English](#english)
 
-![学习首页：按考纲权重查看各科持仓](docs/img/home.png)
+![学习首页：按考纲权重查看各科持仓，自动指出低配科目](docs/img/home.png)
 
 > [!IMPORTANT]
 > 本项目仅提供工具，**不包含任何真题或讲义**。内置的 20 道 CFA 示例题为原创演示内容。请仅使用您合法持有的材料，**限个人学习使用，不得传播**。
@@ -51,6 +51,10 @@
 作答后即时显示解析、易错提醒与错因标签，并可一键练习同类新题：
 
 ![做题与解析](docs/img/practice.png)
+
+错题本按知识点汇总薄弱环节，点击即可针对性复习：
+
+![错题本：薄弱知识点排行](docs/img/weak.png)
 
 ## 快速开始
 
