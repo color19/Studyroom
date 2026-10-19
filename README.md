@@ -1,5 +1,6 @@
 # 刷题室 · Study Room
 
+[![check](https://github.com/color19/Studyroom/actions/workflows/check.yml/badge.svg)](https://github.com/color19/Studyroom/actions/workflows/check.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Single file](https://img.shields.io/badge/app-single%20HTML%20file-brightgreen)
 ![No backend](https://img.shields.io/badge/backend-none-lightgrey)
@@ -13,6 +14,8 @@
 - **考试无关**：科目、权重、题量、时长均可自定义
 
 [在线体验](https://color19.github.io/studyroom/) · [数据格式](docs/FORMAT.md) · [AI 流程](docs/AI_PIPELINE.md) · [English](#english)
+
+![学习首页：按考纲权重查看各科持仓](docs/img/home.png)
 
 > [!IMPORTANT]
 > 本项目仅提供工具，**不包含任何真题或讲义**。内置的 20 道 CFA 示例题为原创演示内容。请仅使用您合法持有的材料，**限个人学习使用，不得传播**。
@@ -44,6 +47,10 @@
 | **知识卡** | 每个知识点一张卡片，支持 LaTeX 公式、要点与易错点；作答后随解析展示，可在页面内直接编辑 |
 | **考前速览** | 自动汇总最薄弱的知识点及对应卡片，支持打印 |
 | **其他** | 暂停与断点续做、作答记录、学习报告、按章节组织的笔记、术语高亮 |
+
+作答后即时显示解析、易错提醒与错因标签，并可一键练习同类新题：
+
+![做题与解析](docs/img/practice.png)
 
 ## 快速开始
 

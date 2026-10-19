@@ -1,0 +1,21 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate sample bank
+        run: python3 tools/validate_bank.py sample/bank.sample.json
+      - name: index.html is up to date with src/
+        run: |
+          python3 build.py
+          git diff --exit-code -- index.html || { echo "::error::index.html is stale. Run 'python3 build.py' and commit the result."; exit 1; }
