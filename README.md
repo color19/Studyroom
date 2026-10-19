@@ -114,9 +114,9 @@ python3 build.py --bank my/bank.json     # 生成 dist/personal.html，已被 .g
 
 ## 关于这个项目
 
-作者是金融专业的学生，这个网站是在备考 CFA 一级的过程中和 Claude 一起 vibecoding 出来的。朋友问能不能拿去考别的，于是把它改成了通用版开源出来。
+作者是金融专业的学生，这个网站是在备考 CFA 一级的过程中和 Claude 一起 vibecoding 出来的。朋友问能不能用在别的领域刷题，于是把它改成了通用版开源出来。
 
-欢迎提 issue 和 PR：功能、bug、别的考试的知识点目录都可以，但请不要提交任何受版权保护的题目或讲义。
+欢迎提 issue 和 PR：功能、bug都可以。
 
 ## License
 
