@@ -1,0 +1,10 @@
+# your private materials: never commit question banks, lecture notes or cards made from them
+my/
+dist/
+data/
+*.bak
+*_changelog.txt
+*.pdf
+node_modules/
+.DS_Store
+__pycache__/

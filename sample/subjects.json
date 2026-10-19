@@ -1,0 +1,62 @@
+[
+ {
+  "id": "quant",
+  "en": "Quantitative Methods",
+  "zh": "数量分析",
+  "no": 1
+ },
+ {
+  "id": "econ",
+  "en": "Economics",
+  "zh": "经济学",
+  "no": 2
+ },
+ {
+  "id": "corp",
+  "en": "Corporate Issuers",
+  "zh": "公司发行人",
+  "no": 3
+ },
+ {
+  "id": "fsa",
+  "en": "Financial Statement Analysis",
+  "zh": "财务报表分析",
+  "no": 4
+ },
+ {
+  "id": "equity",
+  "en": "Equity Investments",
+  "zh": "权益投资",
+  "no": 5
+ },
+ {
+  "id": "fi",
+  "en": "Fixed Income",
+  "zh": "固定收益",
+  "no": 6
+ },
+ {
+  "id": "deriv",
+  "en": "Derivatives",
+  "zh": "衍生品",
+  "no": 7
+ },
+ {
+  "id": "alt",
+  "en": "Alternative Investments",
+  "zh": "另类投资",
+  "no": 8
+ },
+ {
+  "id": "pm",
+  "en": "Portfolio Management",
+  "zh": "投资组合管理",
+  "no": 9
+ },
+ {
+  "id": "ethics",
+  "en": "Ethical and Professional Standards",
+  "zh": "职业道德",
+  "no": 10
+ }
+]

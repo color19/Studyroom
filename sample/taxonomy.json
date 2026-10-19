@@ -1,0 +1,3248 @@
+[
+ {
+  "t": "Alternative Investment Features, Methods, and Structures",
+  "zh": "另类投资的特征、方法与结构",
+  "sj": "alt",
+  "g": [
+   [
+    "另类投资特征",
+    "Features of alternatives"
+   ],
+   [
+    "投资方式",
+    "Direct, co-, fund investing"
+   ],
+   [
+    "基金结构与类型",
+    "Fund structures and types"
+   ],
+   [
+    "管理费结构",
+    "Fee structures"
+   ],
+   [
+    "业绩费与门槛",
+    "Performance fee and hurdles"
+   ],
+   [
+    "分配瀑布与回拨",
+    "Waterfall and clawback"
+   ]
+  ]
+ },
+ {
+  "t": "Alternative Investment Performance and Returns",
+  "zh": "另类投资的业绩与收益",
+  "sj": "alt",
+  "g": [
+   [
+    "激励费计算",
+    "Incentive fee calculation"
+   ],
+   [
+    "门槛收益费用",
+    "Hurdle rate fee calculation"
+   ],
+   [
+    "高水位线",
+    "High-water mark"
+   ],
+   [
+    "私募追补分配",
+    "PE catch-up distribution"
+   ],
+   [
+    "杠杆收益",
+    "Leverage and returns"
+   ],
+   [
+    "估值与流动性",
+    "Valuation and liquidity"
+   ],
+   [
+    "指数偏差与风险",
+    "Index bias and risk"
+   ]
+  ]
+ },
+ {
+  "t": "Analysis of Income Taxes",
+  "zh": "所得税分析",
+  "sj": "fsa",
+  "g": [
+   [
+    "所得税费用",
+    "Income tax expense vs taxes payable"
+   ],
+   [
+    "暂时性差异与递延税",
+    "Temporary differences, DTA and DTL"
+   ],
+   [
+    "永久性差异",
+    "Permanent differences"
+   ],
+   [
+    "递延税分析处理",
+    "Analytical treatment of deferred taxes"
+   ],
+   [
+    "税率变动与估值备抵",
+    "Tax rate changes and valuation allowance"
+   ],
+   [
+    "有效税率",
+    "Effective and cash tax rates"
+   ],
+   [
+    "税务亏损结转",
+    "Tax loss carryforwards"
+   ]
+  ]
+ },
+ {
+  "t": "Analysis of Inventories",
+  "zh": "存货分析",
+  "sj": "fsa",
+  "g": [
+   [
+    "成本流假设",
+    "FIFO, LIFO and average cost effects"
+   ],
+   [
+    "LIFO储备与转换",
+    "LIFO reserve, liquidation and conversion"
+   ],
+   [
+    "成本与NRV孰低",
+    "Lower of cost and NRV"
+   ],
+   [
+    "减记与转回",
+    "Write-downs and reversals"
+   ],
+   [
+    "减记对比率影响",
+    "Write-down effects on ratios"
+   ],
+   [
+    "存货披露与变更",
+    "Disclosures and changes in method"
+   ],
+   [
+    "存货成本与趋势",
+    "Inventory costs and trends"
+   ]
+  ]
+ },
+ {
+  "t": "Analysis of Long-Term Assets",
+  "zh": "长期资产分析",
+  "sj": "fsa",
+  "g": [
+   [
+    "资本化与费用化",
+    "Capitalization vs Expensing"
+   ],
+   [
+    "无形资产",
+    "Intangible Assets"
+   ],
+   [
+    "长期资产减值",
+    "Impairment of Long-Lived Assets"
+   ],
+   [
+    "重估与公允价值模型",
+    "Revaluation and Fair Value Models"
+   ],
+   [
+    "资产处置与废弃",
+    "Disposal and Abandonment"
+   ],
+   [
+    "资产年限与周转比率",
+    "Asset Age and Turnover Ratios"
+   ],
+   [
+    "披露要求",
+    "Disclosure Requirements"
+   ],
+   [
+    "折旧方法",
+    "Depreciation Methods"
+   ]
+  ]
+ },
+ {
+  "t": "Analyzing Balance Sheets",
+  "zh": "资产负债表分析",
+  "sj": "fsa",
+  "g": [
+   [
+    "共同比资产负债表",
+    "Common-Size Balance Sheet"
+   ],
+   [
+    "流动性与偿债比率",
+    "Liquidity and Solvency Ratios"
+   ],
+   [
+    "商誉",
+    "Goodwill"
+   ],
+   [
+    "无形资产确认与计量",
+    "Intangible Asset Recognition and Measurement"
+   ],
+   [
+    "金融资产分类与计量",
+    "Financial Asset Classification and Measurement"
+   ],
+   [
+    "金融负债与递延所得税",
+    "Financial Liabilities and Deferred Taxes"
+   ],
+   [
+    "资产负债表要素分类",
+    "Balance Sheet Elements"
+   ]
+  ]
+ },
+ {
+  "t": "Analyzing Income Statements",
+  "zh": "利润表分析",
+  "sj": "fsa",
+  "g": [
+   [
+    "收入与费用确认",
+    "Revenue and expense recognition"
+   ],
+   [
+    "会计变更与非经常项目",
+    "Accounting changes and nonrecurring items"
+   ],
+   [
+    "共同比利润表",
+    "Common-size income statement"
+   ],
+   [
+    "加权平均股数",
+    "Weighted average shares"
+   ],
+   [
+    "基本EPS与资本结构",
+    "Basic EPS and capital structure"
+   ],
+   [
+    "可转换证券稀释EPS",
+    "Diluted EPS with convertibles"
+   ],
+   [
+    "库存股法",
+    "Treasury stock method"
+   ],
+   [
+    "稀释与反稀释",
+    "Dilutive vs antidilutive securities"
+   ]
+  ]
+ },
+ {
+  "t": "Analyzing Statements of Cash Flows I",
+  "zh": "现金流量表分析 I",
+  "sj": "fsa",
+  "g": [
+   [
+    "间接法CFO",
+    "Indirect method CFO"
+   ],
+   [
+    "直接法现金收付",
+    "Direct method cash flows"
+   ],
+   [
+    "间接转直接",
+    "Indirect to direct conversion"
+   ],
+   [
+    "投资与筹资活动",
+    "Investing and financing activities"
+   ],
+   [
+    "利息股利分类",
+    "IFRS vs US GAAP classification"
+   ],
+   [
+    "营运资本调整",
+    "Working capital and non-cash adjustments"
+   ],
+   [
+    "共同比与自由现金流",
+    "Common-size and FCF analysis"
+   ]
+  ]
+ },
+ {
+  "t": "Analyzing Statements of Cash Flows II",
+  "zh": "现金流量表分析 II",
+  "sj": "fsa",
+  "g": [
+   [
+    "共同比现金流",
+    "Common-size cash flow"
+   ],
+   [
+    "FCFF与FCFE",
+    "FCFF and FCFE"
+   ],
+   [
+    "现金流比率",
+    "Cash flow ratios"
+   ],
+   [
+    "现金流结构分析",
+    "Cash flow pattern analysis"
+   ]
+  ]
+ },
+ {
+  "t": "Arbitrage, Replication, and the Cost of Carry in Pricing Derivatives",
+  "zh": "无套利、复制与持有成本",
+  "sj": "deriv",
+  "g": [
+   [
+    "无套利原则",
+    "No-arbitrage principle"
+   ],
+   [
+    "远期定价公式",
+    "Forward pricing formula"
+   ],
+   [
+    "持有成本与收益",
+    "Costs and benefits of holding"
+   ],
+   [
+    "便利收益",
+    "Convenience yield"
+   ]
+  ]
+ },
+ {
+  "t": "Asset-Backed Security (ABS) Instrument and Market Features",
+  "zh": "资产支持证券(ABS)特征",
+  "sj": "fi",
+  "g": [
+   [
+    "证券化结构与分层",
+    "Securitization structure and tranching"
+   ],
+   [
+    "信用增强",
+    "Credit enhancement"
+   ],
+   [
+    "担保债券",
+    "Covered bonds"
+   ],
+   [
+    "信用卡与汽车ABS",
+    "Credit card and auto ABS"
+   ],
+   [
+    "CDO与CLO",
+    "CDOs and CLOs"
+   ]
+  ]
+ },
+ {
+  "t": "Basics of Portfolio Planning and Construction",
+  "zh": "投资组合规划与构建基础",
+  "sj": "pm",
+  "g": [
+   [
+    "IPS结构与作用",
+    "IPS purpose and components"
+   ],
+   [
+    "风险承受能力",
+    "Ability and willingness to take risk"
+   ],
+   [
+    "投资约束",
+    "IPS constraints"
+   ],
+   [
+    "收益与风险目标",
+    "Return and risk objectives"
+   ],
+   [
+    "资产类别定义",
+    "Defining asset classes"
+   ],
+   [
+    "战略与战术配置",
+    "Strategic and tactical asset allocation"
+   ]
+  ]
+ },
+ {
+  "t": "Business Models",
+  "zh": "商业模式",
+  "sj": "corp",
+  "g": [
+   [
+    "分层与动态定价",
+    "Tiered and dynamic pricing"
+   ],
+   [
+    "渗透与组合定价",
+    "Penetration, add-on and bundling"
+   ],
+   [
+    "免费增值与隐性收入",
+    "Freemium and hidden revenue"
+   ],
+   [
+    "商业模式类型",
+    "Business model types"
+   ],
+   [
+    "渠道策略",
+    "Channel strategy"
+   ],
+   [
+    "供应链",
+    "Supply chain"
+   ]
+  ]
+ },
+ {
+  "t": "Capital Flows and the FX Market",
+  "zh": "资本流动与外汇市场",
+  "sj": "econ",
+  "g": [
+   [
+    "名义与真实汇率",
+    "Nominal vs real exchange rates"
+   ],
+   [
+    "汇率升贬值计算",
+    "Appreciation and depreciation"
+   ],
+   [
+    "外汇市场参与者",
+    "FX market structure and participants"
+   ],
+   [
+    "汇率制度",
+    "Exchange rate regimes"
+   ],
+   [
+    "资本管制",
+    "Capital flows and restrictions"
+   ],
+   [
+    "贸易收支与汇率",
+    "Trade balance, Marshall-Lerner, J-curve"
+   ]
+  ]
+ },
+ {
+  "t": "Capital Investments and Capital Allocation",
+  "zh": "资本投资与资本配置",
+  "sj": "corp",
+  "g": [
+   [
+    "NPV与决策规则",
+    "NPV and decision rules"
+   ],
+   [
+    "IRR与互斥项目",
+    "IRR and mutually exclusive projects"
+   ],
+   [
+    "增量现金流估计",
+    "Incremental cash flow estimation"
+   ],
+   [
+    "实物期权",
+    "Real options"
+   ],
+   [
+    "资本配置流程与陷阱",
+    "Capital allocation process and pitfalls"
+   ],
+   [
+    "投资项目类型",
+    "Types of capital projects"
+   ],
+   [
+    "折现率选择",
+    "Discount rate selection"
+   ]
+  ]
+ },
+ {
+  "t": "Capital Structure",
+  "zh": "资本结构",
+  "sj": "corp",
+  "g": [
+   [
+    "MM理论",
+    "Modigliani-Miller propositions"
+   ],
+   [
+    "WACC计算",
+    "WACC calculation"
+   ],
+   [
+    "税盾与税率",
+    "Tax shield and tax rate"
+   ],
+   [
+    "目标资本结构",
+    "Target capital structure"
+   ],
+   [
+    "权衡理论",
+    "Static trade-off theory"
+   ],
+   [
+    "啄食顺序与代理成本",
+    "Pecking order and agency costs"
+   ],
+   [
+    "资本结构影响因素",
+    "Factors affecting capital structure"
+   ]
+  ]
+ },
+ {
+  "t": "Code of Ethics and Standards of Professional Conduct",
+  "zh": "道德规范与职业行为准则",
+  "sj": "ethics",
+  "g": [
+   [
+    "道德准则内容",
+    "Code of Ethics components"
+   ],
+   [
+    "职业行为标准",
+    "Standards of Professional Conduct"
+   ],
+   [
+    "PCP与处罚",
+    "Professional Conduct Program & sanctions"
+   ],
+   [
+    "标准情景应用",
+    "Applying the Standards to cases"
+   ],
+   [
+    "不当行为与披露",
+    "Misconduct and duty to disclose"
+   ]
+  ]
+ },
+ {
+  "t": "Company Analysis: Forecasting",
+  "zh": "公司分析:预测",
+  "sj": "equity",
+  "g": [
+   [
+    "收入预测驱动",
+    "Top-down and bottom-up revenue drivers"
+   ],
+   [
+    "预测方法选择",
+    "Choosing a forecasting approach"
+   ],
+   [
+    "成本费用预测",
+    "Forecasting costs and SG&A"
+   ],
+   [
+    "资本支出与资本结构",
+    "Capex and capital structure forecasts"
+   ],
+   [
+    "预估报表与营运资本",
+    "Pro forma statements and working capital"
+   ],
+   [
+    "情景分析与管理层指引",
+    "Scenario analysis and management guidance"
+   ]
+  ]
+ },
+ {
+  "t": "Company Analysis: Past and Present",
+  "zh": "公司分析:过去与现在",
+  "sj": "equity",
+  "g": [
+   [
+    "研究报告结构",
+    "Structure of company research reports"
+   ],
+   [
+    "商业模式与信息来源",
+    "Business model and information sources"
+   ],
+   [
+    "竞争与定价能力",
+    "Competition and pricing power"
+   ],
+   [
+    "经营与财务杠杆",
+    "Operating and financial leverage"
+   ],
+   [
+    "利润指标与市场份额",
+    "Profit measures and market share"
+   ],
+   [
+    "资本来源与用途",
+    "Sources and uses of capital"
+   ]
+  ]
+ },
+ {
+  "t": "Corporate Governance: Conflicts, Mechanisms, Risks, and Benefits",
+  "zh": "公司治理:冲突、机制、风险与收益",
+  "sj": "corp",
+  "g": [
+   [
+    "董事会与委员会",
+    "Board and committees"
+   ],
+   [
+    "委托代理冲突",
+    "Principal-agent conflicts"
+   ],
+   [
+    "薪酬与利益错配",
+    "Compensation and misalignment"
+   ],
+   [
+    "治理实践与风险",
+    "Governance practices and risks"
+   ]
+  ]
+ },
+ {
+  "t": "Credit Analysis for Corporate Issuers",
+  "zh": "公司发行人信用分析",
+  "sj": "fi",
+  "g": [
+   [
+    "评级与Notching",
+    "Credit ratings and notching"
+   ],
+   [
+    "债务求偿顺序与回收",
+    "Priority of claims and recovery"
+   ],
+   [
+    "结构性次级",
+    "Structural subordination"
+   ],
+   [
+    "债券契约条款",
+    "Bond covenants"
+   ],
+   [
+    "信用财务比率",
+    "Credit ratios"
+   ],
+   [
+    "公司信用分析框架",
+    "Corporate credit analysis framework"
+   ]
+  ]
+ },
+ {
+  "t": "Credit Analysis for Government Issuers",
+  "zh": "政府发行人信用分析",
+  "sj": "fi",
+  "g": [
+   [
+    "主权评估框架",
+    "Sovereign credit assessment framework"
+   ],
+   [
+    "外部实力与外汇",
+    "External strength and FX"
+   ],
+   [
+    "GO债与收益债比较",
+    "GO vs revenue bonds"
+   ],
+   [
+    "收益债与超国家",
+    "Revenue-backed and supranational issuers"
+   ]
+  ]
+ },
+ {
+  "t": "Credit Risk",
+  "zh": "信用风险",
+  "sj": "fi",
+  "g": [
+   [
+    "预期损失与PD/LGD",
+    "Expected loss, POD and LGD"
+   ],
+   [
+    "信用分析4C",
+    "Four Cs of credit analysis"
+   ],
+   [
+    "经济周期与利差",
+    "Business cycle and spreads"
+   ],
+   [
+    "供需回收与利差",
+    "Supply, demand, recovery and spreads"
+   ],
+   [
+    "流动性风险",
+    "Market liquidity risk"
+   ],
+   [
+    "评级局限与利差久期",
+    "Rating pitfalls and spread duration"
+   ]
+  ]
+ },
+ {
+  "t": "Curve-Based and Empirical Fixed-Income Risk Measures",
+  "zh": "基于曲线与经验的固收风险度量",
+  "sj": "fi",
+  "g": [
+   [
+    "久期凸性估价",
+    "Price change via duration and convexity"
+   ],
+   [
+    "有效久期计算",
+    "Computing effective duration/convexity"
+   ],
+   [
+    "有效久期适用",
+    "When to use effective duration"
+   ],
+   [
+    "关键利率久期",
+    "Key rate duration"
+   ],
+   [
+    "曲线久期",
+    "Curve vs yield duration"
+   ],
+   [
+    "含权债凸性",
+    "Convexity of bonds with options"
+   ],
+   [
+    "经验久期",
+    "Empirical duration"
+   ]
+  ]
+ },
+ {
+  "t": "Derivative Benefits, Risks, and Issuer and Investor Uses",
+  "zh": "衍生品的收益、风险与用途",
+  "sj": "deriv",
+  "g": [
+   [
+    "对冲会计类型",
+    "Hedge accounting types"
+   ],
+   [
+    "衍生品风险",
+    "Derivative risks"
+   ],
+   [
+    "衍生品用途与对冲",
+    "Uses and hedging strategies"
+   ],
+   [
+    "结构化票据",
+    "Structured notes"
+   ],
+   [
+    "期权价值影响因素",
+    "Option value drivers"
+   ]
+  ]
+ },
+ {
+  "t": "Derivative Instrument and Derivative Market Features",
+  "zh": "衍生品工具与市场特征",
+  "sj": "deriv",
+  "g": [
+   [
+    "衍生品定义与标的",
+    "Derivative definition and underlyings"
+   ],
+   [
+    "交易所与场外市场",
+    "Exchange-traded vs OTC markets"
+   ],
+   [
+    "清算所与信用风险",
+    "Clearinghouse and credit risk"
+   ],
+   [
+    "远期合约损益与交割",
+    "Forward payoffs and settlement"
+   ],
+   [
+    "远期承诺与或有债权",
+    "Forward commitments vs contingent claims"
+   ]
+  ]
+ },
+ {
+  "t": "Equity Valuation: Concepts and Basic Tools",
+  "zh": "股票估值:概念与基本工具",
+  "sj": "equity",
+  "g": [
+   [
+    "股利与股票拆分",
+    "Dividends & stock splits"
+   ],
+   [
+    "估值模型与选择",
+    "Valuation models & selection"
+   ],
+   [
+    "优先股估值",
+    "Preferred stock valuation"
+   ],
+   [
+    "Gordon增长模型",
+    "Gordon growth model"
+   ],
+   [
+    "多期与多阶段DDM",
+    "Multi-period & multistage DDM"
+   ],
+   [
+    "可持续增长率",
+    "Sustainable growth rate"
+   ],
+   [
+    "合理市盈率",
+    "Justified P/E"
+   ],
+   [
+    "价格乘数与EV",
+    "Price multiples & EV multiples"
+   ]
+  ]
+ },
+ {
+  "t": "Estimation and Inference",
+  "zh": "估计与推断",
+  "sj": "quant",
+  "g": [
+   [
+    "概率抽样",
+    "Probability sampling"
+   ],
+   [
+    "非概率抽样",
+    "Non-probability sampling"
+   ],
+   [
+    "中心极限定理",
+    "Central limit theorem"
+   ],
+   [
+    "标准误计算",
+    "Standard error"
+   ],
+   [
+    "重抽样",
+    "Bootstrap and jackknife"
+   ],
+   [
+    "抽样基本概念",
+    "Sampling basics and sampling error"
+   ]
+  ]
+ },
+ {
+  "t": "Ethics Application",
+  "zh": "道德规范应用",
+  "sj": "ethics",
+  "g": [
+   [
+    "I 职业操守",
+    "I Professionalism"
+   ],
+   [
+    "II 市场诚信",
+    "II Integrity of Capital Markets"
+   ],
+   [
+    "III 对客户义务",
+    "III Duties to Clients"
+   ],
+   [
+    "IV 对雇主义务",
+    "IV Duties to Employers"
+   ],
+   [
+    "V 投资分析",
+    "V Investment Analysis & Recommendations"
+   ],
+   [
+    "VI 利益冲突",
+    "VI Conflicts of Interest"
+   ],
+   [
+    "VII 会员责任",
+    "VII CFA Institute Member Responsibilities"
+   ]
+  ]
+ },
+ {
+  "t": "Ethics and Trust in the Investment Profession",
+  "zh": "投资行业的道德与信任",
+  "sj": "ethics",
+  "g": [
+   [
+    "伦理与法律",
+    "Ethics vs legal standards"
+   ],
+   [
+    "职业与信任",
+    "Profession and trust"
+   ],
+   [
+    "不道德行为后果",
+    "Costs of unethical behavior"
+   ],
+   [
+    "道德准则",
+    "Codes of ethics"
+   ],
+   [
+    "道德决策框架",
+    "Ethical decision-making framework"
+   ],
+   [
+    "偏差与情境影响",
+    "Biases and situational influences"
+   ],
+   [
+    "信义与适当性",
+    "Fiduciary and suitability standards"
+   ]
+  ]
+ },
+ {
+  "t": "Exchange Rate Calculations",
+  "zh": "汇率计算",
+  "sj": "econ",
+  "g": [
+   [
+    "交叉汇率",
+    "Cross rates"
+   ],
+   [
+    "远期点数与报价",
+    "Forward points and quotes"
+   ],
+   [
+    "抵补利率平价",
+    "Covered interest rate parity"
+   ],
+   [
+    "套利",
+    "Arbitrage"
+   ],
+   [
+    "实际汇率计算",
+    "Real exchange rate calculation"
+   ]
+  ]
+ },
+ {
+  "t": "Financial Analysis Techniques",
+  "zh": "财务分析方法",
+  "sj": "fsa",
+  "g": [
+   [
+    "流动性比率",
+    "Liquidity ratios"
+   ],
+   [
+    "营运效率与现金周期",
+    "Activity ratios and cash conversion cycle"
+   ],
+   [
+    "杜邦分析",
+    "DuPont analysis of ROE"
+   ],
+   [
+    "盈利能力比率",
+    "Profitability ratios"
+   ],
+   [
+    "偿债能力比率",
+    "Solvency and coverage ratios"
+   ],
+   [
+    "共同比分析",
+    "Common-size analysis"
+   ],
+   [
+    "比率分析应用与预测",
+    "Ratio analysis uses, limits and forecasting"
+   ]
+  ]
+ },
+ {
+  "t": "Financial Reporting Quality",
+  "zh": "财务报告质量",
+  "sj": "fsa",
+  "g": [
+   [
+    "质量谱系",
+    "Reporting & earnings quality spectrum"
+   ],
+   [
+    "动机机会合理化",
+    "Motivation, opportunity, rationalization"
+   ],
+   [
+    "激进与稳健会计",
+    "Aggressive vs conservative accounting"
+   ],
+   [
+    "盈余管理手段",
+    "Earnings management techniques"
+   ],
+   [
+    "现金流操纵",
+    "Cash flow manipulation"
+   ],
+   [
+    "非GAAP指标",
+    "Non-GAAP measures"
+   ],
+   [
+    "约束机制与审计",
+    "Discipline mechanisms & audit"
+   ],
+   [
+    "预警信号",
+    "Warning signs & revenue recognition"
+   ]
+  ]
+ },
+ {
+  "t": "Firms and Market Structures",
+  "zh": "企业与市场结构",
+  "sj": "econ",
+  "g": [
+   [
+    "完全竞争特征",
+    "Perfect competition"
+   ],
+   [
+    "垄断竞争",
+    "Monopolistic competition"
+   ],
+   [
+    "寡头与博弈",
+    "Oligopoly and game models"
+   ],
+   [
+    "市场结构比较",
+    "Comparing market structures"
+   ],
+   [
+    "集中度与HHI",
+    "Concentration measures and HHI"
+   ],
+   [
+    "规模经济",
+    "Economies and diseconomies of scale"
+   ],
+   [
+    "边际报酬递减",
+    "Diminishing returns"
+   ],
+   [
+    "利润最大化与停业",
+    "Profit maximization and shutdown"
+   ]
+  ]
+ },
+ {
+  "t": "Fiscal Policy",
+  "zh": "财政政策",
+  "sj": "econ",
+  "g": [
+   [
+    "财政与货币政策",
+    "Fiscal vs monetary policy"
+   ],
+   [
+    "扩张与紧缩",
+    "Expansionary vs contractionary"
+   ],
+   [
+    "自动稳定器",
+    "Automatic stabilizers and discretionary policy"
+   ],
+   [
+    "赤字与李嘉图等价",
+    "Deficit concerns and Ricardian equivalence"
+   ],
+   [
+    "挤出效应",
+    "Crowding-out effect"
+   ],
+   [
+    "政策时滞",
+    "Policy lags and timing"
+   ],
+   [
+    "财政乘数",
+    "Fiscal multiplier and balanced budget"
+   ],
+   [
+    "财政工具与目标",
+    "Fiscal tools and objectives"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Bond Valuation: Prices and Yields",
+  "zh": "债券估值:价格与收益率",
+  "sj": "fi",
+  "g": [
+   [
+    "债券定价计算",
+    "Bond pricing (PV)"
+   ],
+   [
+    "零息债券与即期利率",
+    "Zero-coupon bonds and spot rates"
+   ],
+   [
+    "价格收益率关系",
+    "Price-yield relationship"
+   ],
+   [
+    "折溢价与到期效应",
+    "Premium/discount and maturity effect"
+   ],
+   [
+    "全价净价与应计利息",
+    "Full/flat price and accrued interest"
+   ],
+   [
+    "矩阵定价",
+    "Matrix pricing"
+   ],
+   [
+    "收益率指标",
+    "Yield measures (YTM, current yield)"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Cash Flows and Types",
+  "zh": "固收现金流与类型",
+  "sj": "fi",
+  "g": [
+   [
+    "证券化与信用增级",
+    "Securitization and credit enhancement"
+   ],
+   [
+    "通胀挂钩债券",
+    "Inflation-linked bonds"
+   ],
+   [
+    "内嵌期权",
+    "Embedded options"
+   ],
+   [
+    "本金偿还结构",
+    "Principal repayment structures"
+   ],
+   [
+    "票息结构",
+    "Coupon structures"
+   ],
+   [
+    "欧洲债券与外国债券",
+    "Eurobonds and foreign bonds"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Instrument Features",
+  "zh": "固收工具特征",
+  "sj": "fi",
+  "g": [
+   [
+    "票息与债券基本要素",
+    "Coupon and basic bond terms"
+   ],
+   [
+    "约束性条款",
+    "Covenants"
+   ],
+   [
+    "契约与偿付来源",
+    "Indenture and repayment priority"
+   ],
+   [
+    "货币市场与评级",
+    "Money vs capital market and ratings"
+   ],
+   [
+    "国际债券与币种",
+    "Eurobonds and currency"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Issuance and Trading",
+  "zh": "固收发行与交易",
+  "sj": "fi",
+  "g": [
+   [
+    "发行人分类与信用评级",
+    "Issuer types and credit ratings"
+   ],
+   [
+    "一级市场发行",
+    "Primary market issuance"
+   ],
+   [
+    "二级市场流动性",
+    "Bid-ask spread and liquidity"
+   ],
+   [
+    "债券指数",
+    "Bond indexes"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Markets for Corporate Issuers",
+  "zh": "公司发行人固收市场",
+  "sj": "fi",
+  "g": [
+   [
+    "短期融资与银行间市场",
+    "Interbank and short-term funding"
+   ],
+   [
+    "回购协议",
+    "Repurchase agreements"
+   ],
+   [
+    "投资级与高收益债",
+    "IG vs high-yield debt"
+   ],
+   [
+    "债务期限与收益率",
+    "Maturity choice and yields"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Markets for Government Issuers",
+  "zh": "政府发行人固收市场",
+  "sj": "fi",
+  "g": [
+   [
+    "主权债拍卖",
+    "Sovereign bond auctions"
+   ],
+   [
+    "一级交易商与央行",
+    "Primary dealers and central bank"
+   ],
+   [
+    "主权债特征",
+    "Sovereign debt features"
+   ],
+   [
+    "非主权与超国家债",
+    "Non-sovereign and supranational"
+   ]
+  ]
+ },
+ {
+  "t": "Fixed-Income Securitization",
+  "zh": "固收证券化",
+  "sj": "fi",
+  "g": [
+   [
+    "证券化的益处",
+    "Benefits of securitization"
+   ],
+   [
+    "SPE与破产隔离",
+    "SPE and bankruptcy remoteness"
+   ],
+   [
+    "参与方与现金流",
+    "Parties and cash flows"
+   ],
+   [
+    "分层",
+    "Tranching"
+   ],
+   [
+    "CDO与担保债券",
+    "CDOs and covered bonds"
+   ]
+  ]
+ },
+ {
+  "t": "Forward Commitment and Contingent Claim Features and Instruments",
+  "zh": "远期承诺与或有债权",
+  "sj": "deriv",
+  "g": [
+   [
+    "期权到期价值",
+    "Option value at expiration"
+   ],
+   [
+    "期权损益",
+    "Option profit and payoff"
+   ],
+   [
+    "期权基本概念",
+    "Option basics"
+   ],
+   [
+    "期货保证金与结算",
+    "Futures margin and settlement"
+   ],
+   [
+    "远期与互换特征",
+    "Forward and swap features"
+   ],
+   [
+    "信用违约互换",
+    "Credit default swaps"
+   ],
+   [
+    "衍生品对冲应用",
+    "Hedging applications"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standard II",
+  "zh": "准则 II 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "重大非公开信息",
+    "MNPI definition and rules"
+   ],
+   [
+    "内幕交易应用",
+    "Applying II(A) to cases"
+   ],
+   [
+    "马赛克理论",
+    "Mosaic theory"
+   ],
+   [
+    "防火墙",
+    "Firewalls and compliance"
+   ],
+   [
+    "市场操纵",
+    "II(B) Market manipulation"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standard IV",
+  "zh": "准则 IV 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "离职准备与竞争",
+    "IV(A) Loyalty: preparing to leave"
+   ],
+   [
+    "离职后招揽与记录",
+    "IV(A) Soliciting clients and employer records"
+   ],
+   [
+    "独立执业与雇佣",
+    "IV(A) Independent practice and employment"
+   ],
+   [
+    "额外报酬",
+    "IV(B) Additional compensation"
+   ],
+   [
+    "合规体系与拒绝监督",
+    "IV(C) Compliance systems, declining supervision"
+   ],
+   [
+    "监督与委派",
+    "IV(C) Supervisory duties and delegation"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standard V",
+  "zh": "准则 V 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "V(A) 合理依据",
+    "V(A) Reasonable basis"
+   ],
+   [
+    "V(A) 依赖他人研究",
+    "V(A) Reliance on third-party research"
+   ],
+   [
+    "V(B) 事实与观点",
+    "V(B) Fact versus opinion"
+   ],
+   [
+    "V(B) 客户沟通内容",
+    "V(B) Client communication content"
+   ],
+   [
+    "V(C) 记录保留",
+    "V(C) Record retention"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standard VI",
+  "zh": "准则 VI 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "VI(A) 持股披露",
+    "VI(A) Disclosure of ownership"
+   ],
+   [
+    "VI(A) 其他利益冲突",
+    "VI(A) Other conflicts of interest"
+   ],
+   [
+    "VI(B) 个人交易优先",
+    "VI(B) Priority of personal transactions"
+   ],
+   [
+    "VI(B) 家人账户与程序",
+    "VI(B) Family accounts and procedures"
+   ],
+   [
+    "VI(C) 转介费",
+    "VI(C) Referral fees"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standard VII",
+  "zh": "准则 VII 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "VII(A) 考试保密与行为",
+    "VII(A) Exam confidentiality and conduct"
+   ],
+   [
+    "会员资格维持",
+    "Maintaining membership status"
+   ],
+   [
+    "VII(B) 称号使用规范",
+    "VII(B) Proper use of designation"
+   ],
+   [
+    "VII(B) 候选人表述",
+    "VII(B) Candidate status statements"
+   ],
+   [
+    "VII(B) 夸大与保证",
+    "VII(B) Exaggeration and guarantees"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standards I(A) and I(B)",
+  "zh": "准则 I(A)、I(B) 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "I(A) 知法守法",
+    "Knowledge of the Law"
+   ],
+   [
+    "I(B) 独立与客观",
+    "Independence and Objectivity"
+   ],
+   [
+    "II(A) 重大非公开信息",
+    "Material Nonpublic Information"
+   ],
+   [
+    "III(A)(B) 忠实与公平对待",
+    "Loyalty, Prudence, Care and Fair Dealing"
+   ],
+   [
+    "III(C)(D)(E) 适当性与保密",
+    "Suitability, Performance Presentation, Confidentiality"
+   ],
+   [
+    "IV 对雇主的责任",
+    "Duties to Employers"
+   ],
+   [
+    "V 投资分析与沟通",
+    "Investment Analysis and Communication"
+   ],
+   [
+    "VI-VII 利益冲突与称谓",
+    "Conflicts of Interest and CFA Designation"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standards I(C) and I(D)",
+  "zh": "准则 I(C)、I(D) 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "I(C) 虚假陈述",
+    "Misrepresentation"
+   ],
+   [
+    "抄袭与引用来源",
+    "Plagiarism and Citing Sources"
+   ],
+   [
+    "I(D) 欺诈与不诚实",
+    "Misconduct: Fraud and Dishonesty"
+   ],
+   [
+    "I(D) 犯罪与个人行为",
+    "Misconduct: Criminal and Personal Conduct"
+   ],
+   [
+    "合规程序",
+    "Compliance Procedures"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standards III(A) and III(B)",
+  "zh": "准则 III(A)、III(B) 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "公平传播投资建议",
+    "Fair Dissemination of Recommendations"
+   ],
+   [
+    "交易分配",
+    "Trade Allocation"
+   ],
+   [
+    "代理投票",
+    "Proxy Voting"
+   ],
+   [
+    "软美元与客户佣金",
+    "Soft Dollars and Client Brokerage"
+   ],
+   [
+    "受托义务与审慎",
+    "Fiduciary Duty, Prudence and Care"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standards III(C), III(D), and III(E)",
+  "zh": "准则 III(C)、III(D)、III(E) 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "III(C) 适当性判断",
+    "III(C) Suitability factors"
+   ],
+   [
+    "III(C) 目标与IPS",
+    "III(C) Objectives and IPS"
+   ],
+   [
+    "III(D) 业绩陈述",
+    "III(D) Performance presentation"
+   ],
+   [
+    "III(E) 保密例外",
+    "III(E) Confidentiality exceptions"
+   ],
+   [
+    "III(E) 保密范围",
+    "III(E) Scope of confidentiality"
+   ]
+  ]
+ },
+ {
+  "t": "Guidance for Standards I–VII",
+  "zh": "准则 I 至 VII 指引",
+  "sj": "ethics",
+  "g": [
+   [
+    "I(A) 知法守法",
+    "Knowledge of the Law"
+   ],
+   [
+    "I(B) 独立客观",
+    "Independence and Objectivity"
+   ],
+   [
+    "I(C) 不实陈述",
+    "Misrepresentation"
+   ],
+   [
+    "I(D) 不当行为",
+    "Misconduct"
+   ],
+   [
+    "II(A) 重大非公开信息",
+    "Material Nonpublic Information"
+   ],
+   [
+    "II(B) 操纵市场",
+    "Market Manipulation"
+   ],
+   [
+    "III(A) 忠诚审慎",
+    "Loyalty, Prudence, and Care"
+   ],
+   [
+    "III(B) 公平对待",
+    "Fair Dealing"
+   ],
+   [
+    "III(C) 适当性",
+    "Suitability"
+   ],
+   [
+    "III(D) 业绩陈述",
+    "Performance Presentation"
+   ],
+   [
+    "III(E) 保密性",
+    "Preservation of Confidentiality"
+   ],
+   [
+    "IV(A) 忠诚",
+    "Loyalty (to employer)"
+   ],
+   [
+    "IV(B) 额外报酬",
+    "Additional Compensation Arrangements"
+   ],
+   [
+    "IV(C) 主管责任",
+    "Responsibilities of Supervisors"
+   ],
+   [
+    "V(A) 勤勉合理依据",
+    "Diligence and Reasonable Basis"
+   ],
+   [
+    "V(B) 客户沟通",
+    "Communication with Clients"
+   ],
+   [
+    "V(C) 记录保存",
+    "Record Retention"
+   ],
+   [
+    "VI(A) 利益冲突披露",
+    "Disclosure of Conflicts"
+   ],
+   [
+    "VI(B) 交易优先级",
+    "Priority of Transactions"
+   ],
+   [
+    "VI(C) 推荐费",
+    "Referral Fees"
+   ],
+   [
+    "VII(A) 考试行为",
+    "Conduct as Participants in CFA Programs"
+   ],
+   [
+    "VII(B) 引用CFA",
+    "Reference to CFA Institute, Designation, Program"
+   ]
+  ]
+ },
+ {
+  "t": "Hedge Funds",
+  "zh": "对冲基金",
+  "sj": "alt",
+  "g": [
+   [
+    "对冲基金特征",
+    "Hedge fund features and structure"
+   ],
+   [
+    "权益策略",
+    "Equity strategies"
+   ],
+   [
+    "事件驱动",
+    "Event-driven"
+   ],
+   [
+    "相对价值",
+    "Relative value"
+   ],
+   [
+    "宏观与业绩评价",
+    "Macro and performance evaluation"
+   ],
+   [
+    "指数偏差",
+    "Index biases"
+   ],
+   [
+    "锁定与赎回",
+    "Lockup and redemption"
+   ],
+   [
+    "高水位与门槛",
+    "High-water mark and hurdle"
+   ]
+  ]
+ },
+ {
+  "t": "Hypothesis Testing",
+  "zh": "假设检验",
+  "sj": "quant",
+  "g": [
+   [
+    "假设设定与决策规则",
+    "Hypotheses and decision rule"
+   ],
+   [
+    "两类错误与显著性水平",
+    "Type I/II errors and significance level"
+   ],
+   [
+    "检验功效",
+    "Power of a test"
+   ],
+   [
+    "单样本均值检验",
+    "Test of a single mean"
+   ],
+   [
+    "方差检验",
+    "Chi-square and F tests"
+   ],
+   [
+    "两样本与配对均值检验",
+    "Two-sample and paired mean tests"
+   ],
+   [
+    "参数与非参数检验",
+    "Parametric vs nonparametric tests"
+   ]
+  ]
+ },
+ {
+  "t": "Industry and Competitive Analysis",
+  "zh": "行业与竞争分析",
+  "sj": "equity",
+  "g": [
+   [
+    "行业分类体系",
+    "Industry Classification Systems"
+   ],
+   [
+    "行业集中度HHI",
+    "Industry Concentration and HHI"
+   ],
+   [
+    "五力模型",
+    "Porter's Five Forces"
+   ],
+   [
+    "竞争战略",
+    "Competitive Strategies"
+   ],
+   [
+    "周期与防御",
+    "Cyclical, Defensive and Growth Industries"
+   ],
+   [
+    "PESTLE与分析框架",
+    "PESTLE and Industry Analysis Framework"
+   ],
+   [
+    "行业盈利能力",
+    "Industry Profitability and Pricing Power"
+   ]
+  ]
+ },
+ {
+  "t": "Interest Rate Risk and Return",
+  "zh": "利率风险与收益",
+  "sj": "fi",
+  "g": [
+   [
+    "持有期收益与账面价值",
+    "Holding period return and carrying value"
+   ],
+   [
+    "再投资与价格风险",
+    "Reinvestment and price risk"
+   ],
+   [
+    "麦考利久期",
+    "Macaulay duration"
+   ],
+   [
+    "久期缺口",
+    "Duration gap"
+   ],
+   [
+    "已实现收益率",
+    "Realized horizon yield"
+   ]
+  ]
+ },
+ {
+  "t": "International Trade",
+  "zh": "国际贸易",
+  "sj": "econ",
+  "g": [
+   [
+    "贸易收益与成本",
+    "Gains and costs of trade"
+   ],
+   [
+    "贸易限制理由",
+    "Reasons for trade restrictions"
+   ],
+   [
+    "关税与配额",
+    "Tariffs and quotas"
+   ],
+   [
+    "出口补贴",
+    "Export subsidies"
+   ],
+   [
+    "区域贸易协定",
+    "Regional trading blocs"
+   ],
+   [
+    "国际贸易机构",
+    "IMF, World Bank, WTO"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to Big Data Techniques",
+  "zh": "大数据技术简介",
+  "sj": "quant",
+  "g": [
+   [
+    "大数据特征",
+    "Characteristics of Big Data"
+   ],
+   [
+    "金融科技概述",
+    "Fintech overview"
+   ],
+   [
+    "人工智能与机器学习",
+    "AI and machine learning"
+   ],
+   [
+    "过拟合与欠拟合",
+    "Overfitting and underfitting"
+   ],
+   [
+    "文本分析与NLP",
+    "Text analytics and NLP"
+   ],
+   [
+    "数据处理与另类数据",
+    "Data processing and alternative data"
+   ],
+   [
+    "智能投顾与算法交易",
+    "Robo-advisers and algorithmic trading"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to Digital Assets",
+  "zh": "数字资产简介",
+  "sj": "alt",
+  "g": [
+   [
+    "DLT与共识",
+    "DLT and consensus"
+   ],
+   [
+    "代币化",
+    "Tokenization"
+   ],
+   [
+    "稳定币与ICO",
+    "Stablecoins and ICOs"
+   ],
+   [
+    "价值与价格驱动",
+    "Valuation and price drivers"
+   ],
+   [
+    "交易所",
+    "Exchanges"
+   ],
+   [
+    "投资方式",
+    "Investment vehicles"
+   ],
+   [
+    "投资角色与风险",
+    "Role and risks"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to Financial Statement Analysis",
+  "zh": "财务报表分析简介",
+  "sj": "fsa",
+  "g": [
+   [
+    "分析框架",
+    "FSA framework phases"
+   ],
+   [
+    "财报与分析的角色",
+    "Roles of reporting & analysis"
+   ],
+   [
+    "审计意见",
+    "Audit opinions"
+   ],
+   [
+    "信息来源与披露",
+    "Information sources & disclosures"
+   ],
+   [
+    "准则与监管机构",
+    "Standard setters & regulators"
+   ],
+   [
+    "行业竞争分析",
+    "Industry & competitive analysis"
+   ],
+   [
+    "财务预测",
+    "Financial forecasting"
+   ],
+   [
+    "行为偏差",
+    "Behavioral biases"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to Financial Statement Modeling",
+  "zh": "财务报表建模简介",
+  "sj": "fsa",
+  "g": [
+   [
+    "行为偏差",
+    "Behavioral biases in forecasting"
+   ],
+   [
+    "行业分析与定价权",
+    "Industry analysis and pricing power"
+   ],
+   [
+    "价格弹性与成本影响",
+    "Elasticity and price/cost effects"
+   ],
+   [
+    "预测报表编制",
+    "Pro forma statement building"
+   ],
+   [
+    "预测期限与拐点",
+    "Forecast horizon and inflection points"
+   ],
+   [
+    "估值敏感性与ROIC",
+    "DCF sensitivity and ROIC"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to Geopolitics",
+  "zh": "地缘政治简介",
+  "sj": "econ",
+  "g": [
+   [
+    "国家行为原型",
+    "Country behavior archetypes"
+   ],
+   [
+    "国际机构",
+    "IMF, World Bank, WTO"
+   ],
+   [
+    "地缘政治工具",
+    "Tools of geopolitics"
+   ],
+   [
+    "全球化",
+    "Globalization motives and effects"
+   ],
+   [
+    "地缘风险类型",
+    "Types of geopolitical risk"
+   ],
+   [
+    "风险评估框架",
+    "Likelihood, impact, velocity"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to Risk Management",
+  "zh": "风险管理简介",
+  "sj": "pm",
+  "g": [
+   [
+    "风险管理流程",
+    "Risk management process and framework"
+   ],
+   [
+    "风险治理",
+    "Risk governance"
+   ],
+   [
+    "风险容忍与预算",
+    "Risk tolerance and budgeting"
+   ],
+   [
+    "金融与非金融风险",
+    "Financial and non-financial risks"
+   ],
+   [
+    "风险度量",
+    "Risk measures (VaR, Greeks)"
+   ],
+   [
+    "风险应对",
+    "Risk modification and response"
+   ]
+  ]
+ },
+ {
+  "t": "Introduction to the Global Investment Performance Standards (GIPS)",
+  "zh": "GIPS 简介",
+  "sj": "ethics",
+  "g": [
+   [
+    "适用主体",
+    "Who Can Claim Compliance"
+   ],
+   [
+    "目的与关键概念",
+    "Purpose and Key Concepts"
+   ],
+   [
+    "验证",
+    "Verification"
+   ],
+   [
+    "组合构建",
+    "Composite Construction"
+   ],
+   [
+    "合规基础与要求",
+    "Fundamentals of Compliance"
+   ],
+   [
+    "业绩历史与展示",
+    "Performance History and Presentation"
+   ]
+  ]
+ },
+ {
+  "t": "Investments in Private Capital: Equity and Debt",
+  "zh": "私募资本投资:股权与债权",
+  "sj": "alt",
+  "g": [
+   [
+    "风投融资阶段",
+    "Venture capital stages"
+   ],
+   [
+    "PE策略",
+    "PE strategies"
+   ],
+   [
+    "退出策略",
+    "Exit strategies"
+   ],
+   [
+    "夹层债",
+    "Mezzanine debt"
+   ],
+   [
+    "其他私募债",
+    "Other private debt types"
+   ],
+   [
+    "年份与风险收益",
+    "Vintage year and risk-return"
+   ]
+  ]
+ },
+ {
+  "t": "Investors and Other Stakeholders",
+  "zh": "投资者与其他利益相关者",
+  "sj": "corp",
+  "g": [
+   [
+    "股东与利益相关者理论",
+    "Shareholder vs stakeholder theory"
+   ],
+   [
+    "风险偏好差异",
+    "Stakeholder risk preferences"
+   ],
+   [
+    "债权股权索取权",
+    "Creditor and equity claims"
+   ],
+   [
+    "ESG与激进股东",
+    "ESG and shareholder activism"
+   ],
+   [
+    "治理机制",
+    "Governance mechanisms"
+   ],
+   [
+    "经济利润与资产负债表",
+    "Economic profit and financial balance sheet"
+   ]
+  ]
+ },
+ {
+  "t": "Market Efficiency",
+  "zh": "市场有效性",
+  "sj": "equity",
+  "g": [
+   [
+    "EMH三种形式",
+    "Forms of Market Efficiency"
+   ],
+   [
+    "EMH与投资管理",
+    "EMH and Portfolio Management"
+   ],
+   [
+    "效率影响因素",
+    "Factors Affecting Market Efficiency"
+   ],
+   [
+    "市场异象",
+    "Market Anomalies"
+   ],
+   [
+    "行为金融",
+    "Behavioral Finance Biases"
+   ],
+   [
+    "内在价值与市价",
+    "Intrinsic Value vs Market Value"
+   ]
+  ]
+ },
+ {
+  "t": "Market Organization and Structure",
+  "zh": "市场组织与结构",
+  "sj": "equity",
+  "g": [
+   [
+    "金融体系功能",
+    "Functions of the financial system"
+   ],
+   [
+    "资产与合约",
+    "Assets, funds and contracts"
+   ],
+   [
+    "市场结构与参与者",
+    "Market structure and participants"
+   ],
+   [
+    "证券发行方式",
+    "Securities offerings"
+   ],
+   [
+    "订单类型",
+    "Order types and limit order book"
+   ],
+   [
+    "保证金交易",
+    "Margin purchases"
+   ],
+   [
+    "卖空",
+    "Short sales"
+   ],
+   [
+    "市场监管",
+    "Market regulation"
+   ]
+  ]
+ },
+ {
+  "t": "Monetary Policy",
+  "zh": "货币政策",
+  "sj": "econ",
+  "g": [
+   [
+    "央行职能与目标",
+    "Central bank roles and objectives"
+   ],
+   [
+    "独立性与可信度",
+    "Independence, credibility, transparency"
+   ],
+   [
+    "货币政策工具",
+    "Policy tools and open market operations"
+   ],
+   [
+    "通胀目标制",
+    "Inflation targeting"
+   ],
+   [
+    "中性利率与政策立场",
+    "Neutral rate and policy stance"
+   ],
+   [
+    "传导机制",
+    "Transmission mechanism"
+   ],
+   [
+    "货币政策局限",
+    "Limitations of monetary policy"
+   ],
+   [
+    "货币财政组合",
+    "Monetary and fiscal policy mix"
+   ]
+  ]
+ },
+ {
+  "t": "Mortgage-Backed Security (MBS) Instrument and Market Features",
+  "zh": "抵押支持证券(MBS)特征",
+  "sj": "fi",
+  "g": [
+   [
+    "抵押贷款特征",
+    "Mortgage loan features"
+   ],
+   [
+    "过手证券",
+    "Pass-through securities"
+   ],
+   [
+    "提前还款风险",
+    "Prepayment risk"
+   ],
+   [
+    "CMO与分层",
+    "CMO and tranching"
+   ],
+   [
+    "CMBS",
+    "Commercial MBS"
+   ]
+  ]
+ },
+ {
+  "t": "Natural Resources",
+  "zh": "自然资源",
+  "sj": "alt",
+  "g": [
+   [
+    "期货曲线",
+    "Backwardation, contango and convenience yield"
+   ],
+   [
+    "商品分类与工具",
+    "Commodity types and instruments"
+   ],
+   [
+    "商品投资特征",
+    "Commodity benefits and inflation hedge"
+   ],
+   [
+    "农地与林地",
+    "Farmland and timberland"
+   ]
+  ]
+ },
+ {
+  "t": "Option Replication Using Put–Call Parity",
+  "zh": "看跌看涨平价与期权复制",
+  "sj": "deriv",
+  "g": [
+   [
+    "合成头寸",
+    "Synthetic positions"
+   ],
+   [
+    "保护性看跌与信托看涨",
+    "Protective put and fiduciary call"
+   ],
+   [
+    "平价套利",
+    "Put-call parity arbitrage"
+   ],
+   [
+    "平价计算",
+    "Put-call parity pricing"
+   ],
+   [
+    "看跌看涨远期平价",
+    "Put-call-forward parity"
+   ],
+   [
+    "期权与公司价值",
+    "Options and firm value"
+   ]
+  ]
+ },
+ {
+  "t": "Organizational Forms, Corporate Issuer Features, and Ownership",
+  "zh": "组织形式与公司发行人特征",
+  "sj": "corp",
+  "g": [
+   [
+    "企业形式与责任",
+    "Business forms and owner liability"
+   ],
+   [
+    "有限合伙结构",
+    "Limited partnership structure"
+   ],
+   [
+    "税负与双重征税",
+    "Taxation and double taxation"
+   ],
+   [
+    "公私公司与IPO",
+    "Public vs private companies and IPO"
+   ],
+   [
+    "间接持股与控制",
+    "Indirect ownership and control"
+   ]
+  ]
+ },
+ {
+  "t": "Overview of Equity Securities",
+  "zh": "股票证券概述",
+  "sj": "equity",
+  "g": [
+   [
+    "普通股与投票权",
+    "Common shares and voting rights"
+   ],
+   [
+    "优先股类型",
+    "Preference share features"
+   ],
+   [
+    "存托凭证",
+    "Depository receipts and cross-listing"
+   ],
+   [
+    "私募股权与MBO",
+    "Private equity, VC and MBO"
+   ],
+   [
+    "账面价值与市场价值",
+    "Book, market and intrinsic value"
+   ],
+   [
+    "ROE与股权成本",
+    "ROE and cost of equity"
+   ],
+   [
+    "股权收益与风险",
+    "Equity returns and risk"
+   ],
+   [
+    "发行股票目的",
+    "Purposes of issuing equity"
+   ]
+  ]
+ },
+ {
+  "t": "Parametric and Non-Parametric Tests of Independence",
+  "zh": "独立性的参数与非参数检验",
+  "sj": "quant",
+  "g": [
+   [
+    "卡方独立性检验",
+    "Chi-square test of independence"
+   ],
+   [
+    "相关系数t检验",
+    "t-test of correlation"
+   ],
+   [
+    "Spearman秩相关",
+    "Spearman rank correlation"
+   ],
+   [
+    "临界值与检验结论",
+    "Critical values and test conclusions"
+   ],
+   [
+    "列联表与自由度",
+    "Contingency tables and degrees of freedom"
+   ]
+  ]
+ },
+ {
+  "t": "Portfolio Management: An Overview",
+  "zh": "投资组合管理概述",
+  "sj": "pm",
+  "g": [
+   [
+    "投资组合管理流程",
+    "Portfolio management process"
+   ],
+   [
+    "组合方法与分散化",
+    "Portfolio approach and diversification"
+   ],
+   [
+    "自上而下分析",
+    "Top-down analysis"
+   ],
+   [
+    "机构投资者需求",
+    "Institutional investor needs"
+   ],
+   [
+    "养老金计划",
+    "DB vs DC pension plans"
+   ],
+   [
+    "集合投资产品",
+    "Pooled investment vehicles"
+   ],
+   [
+    "资管行业与产品",
+    "Asset management industry and products"
+   ]
+  ]
+ },
+ {
+  "t": "Portfolio Mathematics",
+  "zh": "投资组合数学",
+  "sj": "quant",
+  "g": [
+   [
+    "期望方差",
+    "Expected return and variance"
+   ],
+   [
+    "协方差",
+    "Covariance"
+   ],
+   [
+    "相关系数",
+    "Correlation"
+   ],
+   [
+    "组合风险收益",
+    "Portfolio return and risk"
+   ],
+   [
+    "安全第一比率",
+    "Roy's safety-first ratio"
+   ]
+  ]
+ },
+ {
+  "t": "Portfolio Risk and Return Part I",
+  "zh": "组合风险与收益 I",
+  "sj": "pm",
+  "g": [
+   [
+    "风险厌恶与效用",
+    "Risk aversion and utility"
+   ],
+   [
+    "协方差与相关系数",
+    "Covariance and correlation"
+   ],
+   [
+    "组合方差与分散化",
+    "Portfolio variance and diversification"
+   ],
+   [
+    "有效前沿与最优组合",
+    "Efficient frontier and optimal portfolio"
+   ],
+   [
+    "资本配置线与CML",
+    "CAL and capital market line"
+   ],
+   [
+    "系统风险与市场模型",
+    "Systematic risk and market model"
+   ],
+   [
+    "CAPM与证券市场线",
+    "CAPM and security market line"
+   ],
+   [
+    "组合绩效评估",
+    "Portfolio performance measures"
+   ]
+  ]
+ },
+ {
+  "t": "Portfolio Risk and Return Part II",
+  "zh": "组合风险与收益 II",
+  "sj": "pm",
+  "g": [
+   [
+    "CAPM假设",
+    "CAPM assumptions"
+   ],
+   [
+    "资本市场线",
+    "CML and market portfolio"
+   ],
+   [
+    "证券市场线估值",
+    "SML and security valuation"
+   ],
+   [
+    "CAPM与贝塔计算",
+    "CAPM return and beta calculation"
+   ],
+   [
+    "风险调整绩效",
+    "Sharpe, Treynor, M2, Jensen alpha"
+   ],
+   [
+    "系统与非系统风险",
+    "Systematic vs unsystematic risk"
+   ],
+   [
+    "市场模型多因子",
+    "Market model and multifactor models"
+   ]
+  ]
+ },
+ {
+  "t": "Pricing and Valuation of Forward Contracts and for an Underlying with Varying Maturities",
+  "zh": "远期合约定价与估值",
+  "sj": "deriv",
+  "g": [
+   [
+    "远期合约价值",
+    "Forward contract value"
+   ],
+   [
+    "初始价值为零",
+    "Zero value at initiation"
+   ],
+   [
+    "远期定价",
+    "Forward pricing"
+   ],
+   [
+    "远期利率与FRA",
+    "Forward rates and FRA"
+   ]
+  ]
+ },
+ {
+  "t": "Pricing and Valuation of Futures Contracts",
+  "zh": "期货合约定价与估值",
+  "sj": "deriv",
+  "g": [
+   [
+    "利率相关性与远期期货",
+    "Rate correlation: forward vs futures"
+   ],
+   [
+    "远期期货价差成因",
+    "Sources of forward-futures differences"
+   ],
+   [
+    "逐日盯市",
+    "Daily settlement / mark to market"
+   ],
+   [
+    "凸性偏差",
+    "Convexity bias (FRA vs futures)"
+   ],
+   [
+    "商品期货定价",
+    "Futures pricing with storage costs"
+   ]
+  ]
+ },
+ {
+  "t": "Pricing and Valuation of Interest Rates and Other Swaps",
+  "zh": "利率及其他互换定价与估值",
+  "sj": "deriv",
+  "g": [
+   [
+    "互换定价与初始价值",
+    "Swap price and initial value"
+   ],
+   [
+    "互换与远期组合",
+    "Swap as series of forwards"
+   ],
+   [
+    "互换估值计算",
+    "Swap valuation calculation"
+   ],
+   [
+    "互换复制与应用",
+    "Replication and uses of swaps"
+   ]
+  ]
+ },
+ {
+  "t": "Pricing and Valuation of Options",
+  "zh": "期权定价与估值",
+  "sj": "deriv",
+  "g": [
+   [
+    "期权价内价外",
+    "Moneyness"
+   ],
+   [
+    "内在价值与时间价值",
+    "Exercise value and time value"
+   ],
+   [
+    "期权价值上下界",
+    "Option value bounds"
+   ],
+   [
+    "到期期权价值",
+    "Value at expiration"
+   ],
+   [
+    "期权价值影响因素",
+    "Determinants of option value"
+   ],
+   [
+    "期权策略与复制",
+    "Option strategies and replication"
+   ]
+  ]
+ },
+ {
+  "t": "Probability Trees and Conditional Expectations",
+  "zh": "概率树与条件期望",
+  "sj": "quant",
+  "g": [
+   [
+    "条件期望",
+    "Conditional expectation"
+   ],
+   [
+    "概率树",
+    "Probability tree"
+   ],
+   [
+    "贝叶斯公式",
+    "Bayes' formula and total probability"
+   ],
+   [
+    "离散分布",
+    "Discrete distribution mean and variance"
+   ]
+  ]
+ },
+ {
+  "t": "Rates and Returns",
+  "zh": "利率与收益率",
+  "sj": "quant",
+  "g": [
+   [
+    "持有期收益率",
+    "Holding period and annualized return"
+   ],
+   [
+    "连续复利收益",
+    "Continuously compounded return"
+   ],
+   [
+    "货币时间加权",
+    "Money-weighted vs time-weighted return"
+   ],
+   [
+    "均值比较",
+    "Arithmetic, geometric, harmonic mean"
+   ],
+   [
+    "必要收益与溢价",
+    "Required return and risk premiums"
+   ],
+   [
+    "复利与EAR",
+    "Compounding, EAR, PV and FV"
+   ],
+   [
+    "总净实际杠杆",
+    "Gross, net, real and leveraged return"
+   ]
+  ]
+ },
+ {
+  "t": "Real Estate and Infrastructure",
+  "zh": "房地产与基础设施",
+  "sj": "alt",
+  "g": [
+   [
+    "经济与社会基础设施",
+    "Economic vs social infrastructure"
+   ],
+   [
+    "绿地与棕地",
+    "Greenfield vs brownfield"
+   ],
+   [
+    "基础设施特征",
+    "Infrastructure features and valuation"
+   ],
+   [
+    "房地产特征与风险",
+    "Real estate characteristics and risks"
+   ],
+   [
+    "地产策略与估值",
+    "Real estate strategies and valuation"
+   ],
+   [
+    "REIT与投资工具",
+    "REITs and investment vehicles"
+   ]
+  ]
+ },
+ {
+  "t": "Security Market Indexes",
+  "zh": "证券市场指数",
+  "sj": "equity",
+  "g": [
+   [
+    "价格加权指数",
+    "Price-weighted index"
+   ],
+   [
+    "市值加权指数",
+    "Market-cap weighted index"
+   ],
+   [
+    "等权重与基本面加权",
+    "Equal and fundamental weighting"
+   ],
+   [
+    "指数构建与再平衡",
+    "Construction, rebalancing, reconstitution"
+   ],
+   [
+    "价格与总收益指数",
+    "Price return vs total return index"
+   ],
+   [
+    "指数类型与用途",
+    "Index types and uses"
+   ],
+   [
+    "固收与另类资产指数",
+    "Fixed income and alternative indexes"
+   ]
+  ]
+ },
+ {
+  "t": "Simple Linear Regression",
+  "zh": "简单线性回归",
+  "sj": "quant",
+  "g": [
+   [
+    "回归基础与假设",
+    "Regression Basics & Assumptions"
+   ],
+   [
+    "斜率与相关系数",
+    "Slope & Correlation"
+   ],
+   [
+    "R²与方差分析",
+    "R-squared & ANOVA"
+   ],
+   [
+    "标准误与异方差",
+    "SEE & Heteroskedasticity"
+   ],
+   [
+    "预测值与区间",
+    "Prediction & Intervals"
+   ],
+   [
+    "斜率显著性检验",
+    "Hypothesis Tests of Slope"
+   ],
+   [
+    "函数形式与虚拟变量",
+    "Functional Forms & Indicator Variables"
+   ]
+  ]
+ },
+ {
+  "t": "Simulation Methods",
+  "zh": "模拟方法",
+  "sj": "quant",
+  "g": [
+   [
+    "蒙特卡洛模拟",
+    "Monte Carlo Simulation"
+   ],
+   [
+    "自助法重抽样",
+    "Bootstrap Resampling"
+   ],
+   [
+    "对数正态分布性质",
+    "Lognormal Distribution Properties"
+   ],
+   [
+    "连续复利与价格分布",
+    "Continuous Returns & Price Distribution"
+   ]
+  ]
+ },
+ {
+  "t": "Statistical Measures of Asset Returns",
+  "zh": "资产收益的统计度量",
+  "sj": "quant",
+  "g": [
+   [
+    "均值类度量",
+    "Arithmetic, Geometric & Harmonic Means"
+   ],
+   [
+    "加权平均与组合收益",
+    "Weighted Mean & Portfolio Return"
+   ],
+   [
+    "分位数与百分位",
+    "Quantiles & Percentiles"
+   ],
+   [
+    "离散程度",
+    "Dispersion: Variance, SD & MAD"
+   ],
+   [
+    "变异系数与下行风险",
+    "CV & Downside Risk"
+   ],
+   [
+    "偏度与峰度",
+    "Skewness & Kurtosis"
+   ],
+   [
+    "相关系数",
+    "Correlation"
+   ],
+   [
+    "截尾与缩尾均值",
+    "Trimmed & Winsorized Means"
+   ]
+  ]
+ },
+ {
+  "t": "The Behavioral Biases of Individuals",
+  "zh": "个人行为偏差",
+  "sj": "pm",
+  "g": [
+   [
+    "认知与情绪偏差",
+    "Cognitive vs emotional biases"
+   ],
+   [
+    "信念固着偏差",
+    "Belief perseverance biases"
+   ],
+   [
+    "信息处理偏差",
+    "Information processing biases"
+   ],
+   [
+    "过度自信",
+    "Overconfidence"
+   ],
+   [
+    "损失厌恶处置效应",
+    "Loss aversion and disposition effect"
+   ],
+   [
+    "禀赋现状自控",
+    "Endowment, status quo, self-control"
+   ],
+   [
+    "偏差与市场异象",
+    "Biases and market anomalies"
+   ]
+  ]
+ },
+ {
+  "t": "The Term Structure of Interest Rates: Spot, Par, and Forward Curves",
+  "zh": "利率期限结构:即期、平价与远期曲线",
+  "sj": "fi",
+  "g": [
+   [
+    "即期利率概念",
+    "Spot rate and curve concepts"
+   ],
+   [
+    "即期利率估值",
+    "Arbitrage-free valuation with spot rates"
+   ],
+   [
+    "由即期推远期",
+    "Forward rates from spot rates"
+   ],
+   [
+    "由远期推即期",
+    "Spot rates and prices from forward rates"
+   ],
+   [
+    "远期利率应用",
+    "Forward rate applications and breakeven"
+   ],
+   [
+    "套利与特殊债券",
+    "Arbitrage, callable and deferred bonds"
+   ]
+  ]
+ },
+ {
+  "t": "The Time Value of Money in Finance",
+  "zh": "货币时间价值",
+  "sj": "quant",
+  "g": [
+   [
+    "零息债与折现",
+    "Zero-coupon discounting and PV/FV"
+   ],
+   [
+    "年金与永续年金",
+    "Annuities and perpetuities"
+   ],
+   [
+    "延期年金与多笔现金流",
+    "Deferred annuities and uneven cash flows"
+   ],
+   [
+    "债券定价与YTM",
+    "Bond pricing and YTM"
+   ],
+   [
+    "股息折现模型",
+    "Dividend discount model and preferred stock"
+   ],
+   [
+    "无套利与远期利率",
+    "No-arbitrage and implied forward rates"
+   ]
+  ]
+ },
+ {
+  "t": "Topics in Long-Term Liabilities and Equity",
+  "zh": "长期负债与权益专题",
+  "sj": "fsa",
+  "g": [
+   [
+    "租赁动机",
+    "Lease vs buy motives"
+   ],
+   [
+    "租赁分类标准",
+    "Lease classification criteria"
+   ],
+   [
+    "承租人会计",
+    "Lessee accounting"
+   ],
+   [
+    "出租人会计与披露",
+    "Lessor accounting and disclosure"
+   ],
+   [
+    "设定受益计划",
+    "Defined benefit pension plans"
+   ],
+   [
+    "股权激励",
+    "Share-based compensation"
+   ]
+  ]
+ },
+ {
+  "t": "Understanding Business Cycles",
+  "zh": "商业周期",
+  "sj": "econ",
+  "g": [
+   [
+    "周期阶段特征",
+    "Business cycle phases"
+   ],
+   [
+    "存货与要素使用",
+    "Inventory and resource utilization"
+   ],
+   [
+    "领先指标",
+    "Leading indicators"
+   ],
+   [
+    "同步与滞后指标",
+    "Coincident and lagging indicators"
+   ],
+   [
+    "指标综合判断",
+    "Interpreting indicators"
+   ],
+   [
+    "信用周期",
+    "Credit cycles"
+   ]
+  ]
+ },
+ {
+  "t": "Valuing a Derivative Using a One-Period Binomial Model",
+  "zh": "单期二叉树模型",
+  "sj": "deriv",
+  "g": [
+   [
+    "二叉树基础与无套利",
+    "Binomial basics and no-arbitrage"
+   ],
+   [
+    "对冲比率",
+    "Hedge ratio"
+   ],
+   [
+    "风险中性概率",
+    "Risk-neutral probability"
+   ],
+   [
+    "二叉树估值计算",
+    "Binomial valuation calculation"
+   ],
+   [
+    "参数影响与套利",
+    "Parameter effects and arbitrage"
+   ]
+  ]
+ },
+ {
+  "t": "Working Capital and Liquidity",
+  "zh": "营运资本与流动性",
+  "sj": "corp",
+  "g": [
+   [
+    "现金转换周期",
+    "Cash conversion cycle"
+   ],
+   [
+    "营运资本策略",
+    "Working capital management approaches"
+   ],
+   [
+    "速动比率与流动比率",
+    "Quick and current ratios"
+   ],
+   [
+    "流动性来源",
+    "Primary and secondary sources of liquidity"
+   ],
+   [
+    "流动性拖累与压力",
+    "Drags and pulls on liquidity"
+   ],
+   [
+    "商业信用与应收天数",
+    "Trade credit cost and receivable days"
+   ]
+  ]
+ },
+ {
+  "t": "Yield and Yield Spread Measures for Fixed-Rate Bonds",
+  "zh": "固定利率债券收益率与利差",
+  "sj": "fi",
+  "g": [
+   [
+    "到期收益率",
+    "Yield to maturity"
+   ],
+   [
+    "当期收益率",
+    "Current yield"
+   ],
+   [
+    "赎回收益率",
+    "Yield to call and worst"
+   ],
+   [
+    "年化利率换算",
+    "EAR and periodicity conversion"
+   ],
+   [
+    "利差指标",
+    "G-spread, I-spread, Z-spread, OAS"
+   ],
+   [
+    "货币市场收益率",
+    "Money market yields"
+   ],
+   [
+    "浮动利率债券",
+    "Floating-rate note margins"
+   ]
+  ]
+ },
+ {
+  "t": "Yield and Yield Spread Measures for Floating-Rate Instruments",
+  "zh": "浮动利率工具收益率与利差",
+  "sj": "fi",
+  "g": [
+   [
+    "货币市场收益率",
+    "Money market yield measures"
+   ],
+   [
+    "报价保证金",
+    "Quoted margin"
+   ],
+   [
+    "折现保证金",
+    "Discount margin"
+   ],
+   [
+    "FRN定价与票息",
+    "FRN pricing and coupon"
+   ]
+  ]
+ },
+ {
+  "t": "Yield-Based Bond Convexity and Portfolio Properties",
+  "zh": "基于收益率的凸性与组合特性",
+  "sj": "fi",
+  "g": [
+   [
+    "凸性概念与负凸性",
+    "Convexity and negative convexity"
+   ],
+   [
+    "凸性的计算",
+    "Calculating convexity"
+   ],
+   [
+    "久期加凸性估算价格",
+    "Duration plus convexity price change"
+   ],
+   [
+    "货币久期与货币凸性",
+    "Money duration and money convexity"
+   ],
+   [
+    "组合久期计算",
+    "Portfolio duration calculation"
+   ],
+   [
+    "组合久期的局限",
+    "Limitations of portfolio duration"
+   ]
+  ]
+ },
+ {
+  "t": "Yield-Based Bond Duration Measures and Properties",
+  "zh": "基于收益率的久期度量与特性",
+  "sj": "fi",
+  "g": [
+   [
+    "久期的影响因素",
+    "Determinants of duration"
+   ],
+   [
+    "麦考利久期与修正久期",
+    "Macaulay and modified duration"
+   ],
+   [
+    "近似修正久期",
+    "Approximate modified duration"
+   ],
+   [
+    "货币久期",
+    "Money duration"
+   ],
+   [
+    "基点价值PVBP",
+    "Price value of a basis point"
+   ],
+   [
+    "久期的含义与局限",
+    "Meaning and limits of duration"
+   ]
+  ]
+ }
+]
