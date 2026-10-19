@@ -60,7 +60,7 @@ def main():
         qs.append(q)
     if errs: sys.exit('\n'.join(errs[:20]) + (f'\n... {len(errs)} problems' if len(errs) > 20 else ''))
     used = {q['sj'] for q in qs}
-    bank = {'format': 'shuati-room/bank@1', 'subjects': [s for s in subjects if s['id'] in used], 'sources': sources, 'readings': list(readings.values()), 'q': qs, 'kp': [], 'gl': [], 'jc': {}}
+    bank = {'format': 'studyroom/bank@1', 'subjects': [s for s in subjects if s['id'] in used], 'sources': sources, 'readings': list(readings.values()), 'q': qs, 'kp': [], 'gl': [], 'jc': {}}
     if a.exam: bank['exam'] = json.load(open(a.exam, encoding='utf-8'))
     if a.taxonomy and os.path.exists(a.taxonomy): bank['kp'] = json.load(open(a.taxonomy, encoding='utf-8'))
     elif not created:  # all subjects are the built-in CFA ones: attach the CFA taxonomy + glossary

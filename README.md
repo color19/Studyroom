@@ -1,4 +1,4 @@
-# 刷题室 · Shuati Room
+# 刷题室 · Study Room
 
 一个单文件的刷题网站，**任何选择题考试都能用**：CFA、408 计算机考研、软考、AWS 认证、教资、法考……
 你带来自己的题库和讲义，用自己的 AI 把讲义做成知识卡，然后在浏览器里刷题、复习、模考。
@@ -22,7 +22,7 @@
 ## 三分钟开始
 
 1. 下载这个仓库（绿色 Code 按钮 → Download ZIP），双击打开 `index.html`。
-   或者直接打开 GitHub Pages 地址：`https://color19.github.io/shuati-room/`
+   或者直接打开 GitHub Pages 地址：`https://color19.github.io/studyroom/`
 2. 先用示例题点一点，看看功能。
 3. 点左边「导入题库」，导入你的题目 CSV。科目随便写（"数据结构"、"Networking" 都行），模板在页面里能下载，格式见 [docs/FORMAT.md](docs/FORMAT.md)。
 4. 想要知识卡：按 [docs/AI_PIPELINE.md](docs/AI_PIPELINE.md) 用你的 AI 把讲义做成 `cards.json`，再导入。
@@ -96,7 +96,7 @@ python3 build.py --bank my/bank.json     # 生成 dist/personal.html，已被 .g
 
 ## English
 
-**Shuati Room** (刷题室, "practice room") is a single-file practice app for **any multiple-choice exam**. Import your own question bank (CSV or JSON), build a knowledge-point taxonomy and review cards from your own lecture notes with your own AI using the prompts in `prompts/`, then practice, review with spaced repetition, and sit timed mocks in the browser. No server, no install: everything stays in your browser.
+**Study Room** (刷题室, "practice room") is a single-file practice app for **any multiple-choice exam**. Import your own question bank (CSV or JSON), build a knowledge-point taxonomy and review cards from your own lecture notes with your own AI using the prompts in `prompts/`, then practice, review with spaced repetition, and sit timed mocks in the browser. No server, no install: everything stays in your browser.
 
 This repo ships **no third-party questions or course material**. The 20 sample questions (CFA Level I flavoured) are original. Use materials you have legally obtained, for personal study only.
 

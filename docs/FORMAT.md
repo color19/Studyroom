@@ -32,7 +32,7 @@
 
 ```jsonc
 {
-  "format": "shuati-room/bank@1",
+  "format": "studyroom/bank@1",
   "title": "我的题库",                       // 可选
   "subjects": [{"id": "ds", "zh": "数据结构", "en": "Data Structures", "code": "DS", "no": 1}, ...],   // 可选，没有就按题目里的 sj 自动生成；code 是首页滚动条上的简称
   "exam": {                                // 可选，考试设置

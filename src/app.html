@@ -565,7 +565,7 @@ table.ltab tr:last-child td{border-bottom:2px solid var(--ink)}
 
 <div class="app">
   <aside class="rail" aria-label="导航">
-    <div class="brand"><small>Shuati Room</small><b>刷题室</b></div>
+    <div class="brand"><small>Study Room</small><b>刷题室</b></div>
     <nav class="nav" id="nav"></nav>
     <div class="rail-foot">
       <div class="sync"><span class="dot" id="syncDot"></span><span id="syncTxt">正在载入学习记录…</span></div>
@@ -603,7 +603,7 @@ const S={meta:null,subj:{},read:{},Q:{},bySubj:{},byRead:{},loaded:false,
   bookFilter:'all',session:null};
 
 // ---------- persistence: localStorage cache + db (per-viewer private docs)
-const LS='shuati-v1';
+const LS='studyroom-v1';
 function lsLoad(){try{const v=JSON.parse(localStorage.getItem(LS)||'null');if(v){S.prog=v.prog||{};S.notes=v.notes||{};S.log=v.log||{days:{},exams:[]};S.hist=v.hist||[];S.kce=v.kce||{};S.cfg=v.cfg||{};}S.log.days=S.log.days||{};S.log.exams=S.log.exams||[];}catch(e){}}
 function lsSave(){try{localStorage.setItem(LS,JSON.stringify({prog:S.prog,notes:S.notes,log:S.log,hist:S.hist,kce:S.kce,cfg:S.cfg}))}catch(e){}}
 const DB={db:null,uid:null,ok:false,dirty:new Set(),timer:null,busy:false};
@@ -682,7 +682,7 @@ async function loadData(){
   S.meta=meta;
   S.kp=data.kp||[];
   EXAM=Object.assign({secPer:90,session:90},data.exam||{});const w0=EXAM.weights||{};WEIGHTS={};data.subjects.forEach(s=>{WEIGHTS[s.id]=+w0[s.id]||+(100/data.subjects.length).toFixed(1)});WSUM=Object.values(WEIGHTS).reduce((a,b)=>a+b,0)||1;
-  try{document.title=(EXAM.name?EXAM.name+' · ':'')+'刷题室';$('.brand small').textContent=EXAM.name||'Shuati Room'}catch(e){}
+  try{document.title=(EXAM.name?EXAM.name+' · ':'')+'刷题室';$('.brand small').textContent=EXAM.name||'Study Room'}catch(e){}
   meta.subjects.forEach(s=>{S.subj[s.id]=s;S.bySubj[s.id]=[]});
   meta.readings.forEach(r=>{S.read[r.id]=r;S.byRead[r.id]=[]});
   data.q.forEach(q=>{S.Q[q.id]=q;S.bySubj[q.sj].push(q.id);S.byRead[q.r].push(q.id)});
@@ -1310,7 +1310,7 @@ function vReport(){
 function setMode(m){S.mode=m;try{localStorage.setItem('cfa1-mode',m)}catch(e){}}
 function modeChips(){return `<div class="chips mode">${[['instant','每题即时对答案'],['defer','做完再对答案']].map(([k,l])=>`<button class="chip ${S.mode===k?'on':''}" data-mode="${k}">${l}</button>`).join('')}</div>`}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-mode]');if(b){setMode(b.dataset.mode);render()}});
-const RK='shuati-resume';
+const RK='studyroom-resume';
 function loadSaved(){try{S.saved=JSON.parse(localStorage.getItem(RK)||'[]')}catch(e){S.saved=[]}if(!Array.isArray(S.saved))S.saved=[]}
 function writeSaved(){try{localStorage.setItem(RK,JSON.stringify(S.saved))}catch(e){}}
 function nDone(x){return x.ids.filter(i=>{const a=x.ans[i];return a&&(x.type==='exam'?a.c!=null:a.sub)}).length}
@@ -1534,7 +1534,7 @@ document.addEventListener('keydown',e=>{
 
 // ---------- local bank storage (IndexedDB) + import / export
 const IDB={
-  open(){return new Promise((res,rej)=>{const r=indexedDB.open('shuati-room',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})},
+  open(){return new Promise((res,rej)=>{const r=indexedDB.open('studyroom',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})},
   async get(k){try{const db=await IDB.open();return await new Promise(res=>{const t=db.transaction('kv').objectStore('kv').get(k);t.onsuccess=()=>res(t.result==null?null:t.result);t.onerror=()=>res(null)})}catch(e){return null}},
   async set(k,v){const db=await IDB.open();return new Promise((res,rej)=>{const tx=db.transaction('kv','readwrite');tx.objectStore('kv').put(v,k);tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error)})},
   async del(k){try{const db=await IDB.open();await new Promise(res=>{const tx=db.transaction('kv','readwrite');tx.objectStore('kv').delete(k);tx.oncomplete=res;tx.onerror=res})}catch(e){}}
@@ -1615,7 +1615,7 @@ function csvToBank(text,base){
   });
   if(errs.length)throw new Error(errs.slice(0,8).join('\n')+(errs.length>8?`\n……共 ${errs.length} 处问题`:''));
   const used=new Set(q.map(x=>x.sj));const same=!created;
-  return {format:'shuati-room/bank@1',subjects:subjects.filter(s=>used.has(s.id)),sources,readings:Object.values(readings),q,kp:same?((base&&base.kp)||[]):[],gl:same?((base&&base.gl)||[]):[],exam:same?(base&&base.exam):undefined,jc:{}};
+  return {format:'studyroom/bank@1',subjects:subjects.filter(s=>used.has(s.id)),sources,readings:Object.values(readings),q,kp:same?((base&&base.kp)||[]):[],gl:same?((base&&base.gl)||[]):[],exam:same?(base&&base.exam):undefined,jc:{}};
 }
 // cards: accepts {key:{core,f|ftex,pts,trap}} (AI pipeline output) or {key:{c,f,p,t}} (site format)
 function toJC(cards){
@@ -1681,7 +1681,7 @@ bind.import=function(){
     const nb=JSON.parse(JSON.stringify(S.raw));nb.kp=kp;await saveBank(nb)}catch(err){fail(err)}};
   $('#tplCsv').onclick=()=>{const b=new Blob(['﻿subject,source,set,no,question,A,B,C,answer,explanation,explanation_zh,tip,kp\nquant,我的题库,Rates and Returns,1,"A deposit pays 12% compounded monthly. Its EAR is closest to:",12.00%,12.68%,12.36%,B,"EAR = 1.01^12 - 1 = 12.68%","按月复利换算 EAR","12.36% 是按季度复利",85.5\n'],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='questions_template.csv';a.click()};
   $('#expB').onclick=()=>download('bank.json',S.raw);
-  $('#expP').onclick=()=>download('shuati-progress-'+today()+'.json',{v:1,ls:localStorage.getItem(LS),saved:localStorage.getItem(RK)});
+  $('#expP').onclick=()=>download('studyroom-progress-'+today()+'.json',{v:1,ls:localStorage.getItem(LS),saved:localStorage.getItem(RK)});
   $('#impP').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const d=JSON.parse(await readFile(f));if(!d||!d.ls)throw new Error('不是本站导出的学习记录');
     localStorage.setItem(LS,d.ls);if(d.saved)localStorage.setItem(RK,d.saved);location.reload()}catch(err){fail(err)}};
   $('#rstB').onclick=async()=>{if(!confirmBox('清除导入的题库，回到示例题库？学习记录不会删除。'))return;await IDB.del('bank');location.reload()};
