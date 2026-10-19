@@ -1,6 +1,24 @@
 {
  "format": "shuati-room/bank@1",
  "title": "示例题库 (原创演示题)",
+ "exam": {
+  "name": "CFA Level I · 2026",
+  "weights": {
+   "ethics": 17.5,
+   "quant": 7.5,
+   "econ": 7.5,
+   "fsa": 12.5,
+   "corp": 7.5,
+   "equity": 12.5,
+   "fi": 12.5,
+   "deriv": 6.5,
+   "alt": 8.5,
+   "pm": 10
+  },
+  "session": 90,
+  "secPer": 90,
+  "note": "CFA 一级正式考试每场 90 题、135 分钟，平均每题 1.5 分钟。"
+ },
  "subjects": [
   {
    "id": "quant",

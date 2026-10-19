@@ -21,12 +21,12 @@
   ```bash
   bash tools/pdf_to_images.sh my/slides/固收讲义.pdf my/pages/fi
   ```
-- 知识点目录：默认用 `sample/taxonomy.json`（CFA 一级 2026）。
+- 知识点目录：CFA 直接用 `sample/taxonomy.json`。别的考试先用 `prompts/00_taxonomy_from_syllabus.md` 让 AI 从考纲或讲义目录生成 `my/taxonomy.json`，在网站「导入题库」第 3 步导入。
 
 ## 第 1 步 · 讲义 → 知识卡（prompts/01）
 
 ```bash
-python3 tools/cards_pipeline.py taxonomy fi      # 打印固收的知识点编号，贴进 prompt
+python3 tools/cards_pipeline.py taxonomy fi --taxonomy my/taxonomy.json   # 打印某科的知识点编号，贴进 prompt（CFA 示例可省略 --taxonomy）
 ```
 把 `prompts/01_cards_from_slides.md` 的 prompt 和讲义一起交给 AI，结果存成 `my/cards_fi.json`。每个科目做一次，然后合并：
 ```bash

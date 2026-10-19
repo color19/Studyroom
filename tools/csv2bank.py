@@ -6,7 +6,7 @@
 Columns (header row, any order, case-insensitive; Chinese aliases in brackets):
   required: subject(科目) question(题干) A B answer(答案)
   optional: source(来源) set(章节) no(题号) C D E explanation(解析) explanation_zh(中文解析) tip(易错点) kp(知识点, e.g. 85.5) mock
-subject = id (quant, econ, corp, fsa, equity, fi, deriv, alt, pm, ethics) or its Chinese/English name.
+subject = any name (e.g. 数据结构, Networking). The 10 CFA subject ids/names are recognised; other names become new subjects.
 answer  = letter A-E or 1-based number. A source whose name contains "mock" is treated as full mock exams.
 """
 import argparse, csv, html, json, os, re, sys
@@ -19,7 +19,7 @@ def para(t): return ''.join(f'<p>{html.escape(x)}</p>' for x in t.splitlines())
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('csv'); ap.add_argument('-o', '--out', required=True)
-    ap.add_argument('--taxonomy', default=os.path.join(H, 'sample/taxonomy.json')); ap.add_argument('--subjects', default=os.path.join(H, 'sample/subjects.json'))
+    ap.add_argument('--taxonomy', help='your taxonomy.json (default: CFA taxonomy only if all subjects are CFA subjects)'); ap.add_argument('--exam', help='exam.json with name/weights/session/secPer/note'); ap.add_argument('--subjects', default=os.path.join(H, 'sample/subjects.json'))
     a = ap.parse_args()
     subjects = json.load(open(a.subjects, encoding='utf-8'))
     rows = list(csv.reader(open(a.csv, encoding='utf-8-sig', newline='')))
@@ -31,16 +31,18 @@ def main():
         v = v.strip().lower()
         for s in subjects:
             if v in (s['id'], s['zh'].lower(), s['en'].lower()): return s['id']
-    sources, src_ids, readings, qs, errs = [], {}, {}, [], []
+    sources, src_ids, readings, qs, errs, created = [], {}, {}, [], [], []
     for n, r in enumerate(rows[1:], 2):
         if not any(x.strip() for x in r): continue
         g = lambda k: r[idx[k]].strip() if 0 <= idx[k] < len(r) else ''
         sj = find_sj(g('subject'))
-        if not sj: errs.append(f'line {n}: unknown subject "{g("subject")}"'); continue
+        if not sj and g('subject'):
+            sj = f'sj{len(subjects)+1}'; subjects.append({'id': sj, 'zh': g('subject'), 'en': g('subject'), 'no': len(subjects)+1}); created.append(sj)
+        if not sj: errs.append(f'line {n}: empty subject'); continue
         sname = g('source') or '我的题库'
         if sname not in src_ids:
             sid = f'u{len(sources)+1}'; src_ids[sname] = sid
-            sources.append({'id': sid, 'name': sname, 'short': sname if len(sname) <= 16 else sname[:15] + '…', 'mock': bool(re.search('mock', sname, re.I)) or g('mock') == '1'})
+            sources.append({'id': sid, 'name': sname, 'short': sname if len(sname) <= 16 else sname[:15] + '…', 'mock': bool(re.search('mock|模考', sname, re.I)) or g('mock') == '1'})
         sid = src_ids[sname]; st = g('set') or next(s['zh'] for s in subjects if s['id'] == sj)
         rid = f'{sid}::{st}::{sj}'
         readings.setdefault(rid, {'id': rid, 'title': st, 'subject': sj, 'src': sid, 'count': 0})
@@ -57,10 +59,13 @@ def main():
         if m: q['k'] = [int(m[1]), int(m[2])]
         qs.append(q)
     if errs: sys.exit('\n'.join(errs[:20]) + (f'\n... {len(errs)} problems' if len(errs) > 20 else ''))
-    bank = {'format': 'shuati-room/bank@1', 'subjects': subjects, 'sources': sources, 'readings': list(readings.values()), 'q': qs,
-            'kp': json.load(open(a.taxonomy, encoding='utf-8')) if os.path.exists(a.taxonomy) else [], 'gl': [], 'jc': {}}
-    gl = os.path.join(H, 'sample/glossary.json')
-    if os.path.exists(gl): bank['gl'] = json.load(open(gl, encoding='utf-8'))
+    used = {q['sj'] for q in qs}
+    bank = {'format': 'shuati-room/bank@1', 'subjects': [s for s in subjects if s['id'] in used], 'sources': sources, 'readings': list(readings.values()), 'q': qs, 'kp': [], 'gl': [], 'jc': {}}
+    if a.exam: bank['exam'] = json.load(open(a.exam, encoding='utf-8'))
+    if a.taxonomy and os.path.exists(a.taxonomy): bank['kp'] = json.load(open(a.taxonomy, encoding='utf-8'))
+    elif not created:  # all subjects are the built-in CFA ones: attach the CFA taxonomy + glossary
+        bank['kp'] = json.load(open(os.path.join(H, 'sample/taxonomy.json'), encoding='utf-8'))
+        bank['gl'] = json.load(open(os.path.join(H, 'sample/glossary.json'), encoding='utf-8'))
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     json.dump(bank, open(a.out, 'w', encoding='utf-8'), ensure_ascii=False)
     print(f'{len(qs)} questions, {len(readings)} sets, {len(sources)} sources -> {a.out}')

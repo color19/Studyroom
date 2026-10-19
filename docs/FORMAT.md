@@ -6,7 +6,7 @@
 |---|---|---|
 | 题目 CSV 或 `bank.json` | 题目、选项、答案、解析 | 网站「导入题库」第 1 步，或 `tools/csv2bank.py` |
 | `cards.json` | 知识卡 | 「导入题库」第 2 步 |
-| `taxonomy.json` | 知识点目录 | 「导入题库」第 3 步（默认已内置 CFA 一级 2026） |
+| `taxonomy.json` | 知识点目录 | 「导入题库」第 3 步（示例内置 CFA 一级；别的考试用 prompts/00 生成） |
 
 ## 1. 题目 CSV（最简单）
 
@@ -14,7 +14,7 @@
 
 | 列 | 必需 | 说明 |
 |---|---|---|
-| `subject` / 科目 | ✓ | `quant` `econ` `corp` `fsa` `equity` `fi` `deriv` `alt` `pm` `ethics`，或中文名（数量分析、固定收益……） |
+| `subject` / 科目 | ✓ | 任意科目名，比如 `数据结构`、`Networking`。CFA 的 10 个科目 id（`quant` `fi` `ethics` ……）和中文名会被识别成内置科目 |
 | `question` / 题干 | ✓ | 题干，可以换行（用引号包起来） |
 | `A` `B` | ✓ | 选项，`C` `D` `E` 可选 |
 | `answer` / 答案 | ✓ | `A` / `B` / `C`，或者 `1` / `2` / `3` |
@@ -34,13 +34,20 @@
 {
   "format": "shuati-room/bank@1",
   "title": "我的题库",                       // 可选
-  "subjects": [{"id": "quant", "zh": "数量分析", "en": "Quantitative Methods", "no": 1}, ...],   // 可选，默认 CFA 一级 10 科
+  "subjects": [{"id": "ds", "zh": "数据结构", "en": "Data Structures", "code": "DS", "no": 1}, ...],   // 可选，没有就按题目里的 sj 自动生成；code 是首页滚动条上的简称
+  "exam": {                                // 可选，考试设置
+    "name": "408 计算机考研",              // 显示在标题和首页
+    "weights": {"ds": 30, "os": 25},       // 各科权重（百分比），没有就平均分；影响首页目标仓位和随机组卷
+    "session": 40,                         // 一场模考的题数
+    "secPer": 120,                         // 每题限时（秒）
+    "note": "选择题 40 道，每题 2 分"        // 模拟考试页的说明
+  },
   "sources":  [{"id": "s1", "name": "我的题库", "short": "我的", "mock": false}],               // 可选，没有会自动生成
-  "readings": [{"id": "s1-r1", "title": "Rates and Returns", "subject": "quant", "src": "s1", "num": "1"}],
+  "readings": [{"id": "s1-r1", "title": "线性表", "subject": "ds", "src": "s1"}],
   "q": [{
     "id": "s1-1",          // 唯一
     "r": "s1-r1",          // 属于哪个 reading
-    "sj": "quant",         // 科目 id
+    "sj": "ds",            // 科目 id
     "n": 1,                // 题号
     "s": "<p>题干，HTML</p>",
     "o": ["选项 A", "选项 B", "选项 C"],
@@ -65,13 +72,13 @@
 
 ```json
 [
-  {"t": "Rates and Returns", "zh": "利率与收益率", "sj": "quant",
-   "g": [["持有期收益率", "Holding period return"], ["连续复利收益", "Continuous compounding"]]}
+  {"t": "线性表", "zh": "线性表", "sj": "ds",
+   "g": [["顺序表", "Sequential list"], ["单链表", "Singly linked list"]]}
 ]
 ```
 
-知识点的编号就是 `章节序号.知识点序号`，从 0 开始。上面的"连续复利收益"是 `0.1`。
-仓库自带的 `sample/taxonomy.json` 是 CFA 一级 2026 的 102 个章节、633 个知识点，`python3 tools/cards_pipeline.py taxonomy quant` 可以按科目打印出来。
+知识点的编号就是 `章节序号.知识点序号`，从 0 开始。上面的"单链表"是 `0.1`。
+仓库自带的 `sample/taxonomy.json` 是 CFA 一级 2026 的 102 个章节、633 个知识点。别的考试用 `prompts/00_taxonomy_from_syllabus.md` 让 AI 从考纲生成。`python3 tools/cards_pipeline.py taxonomy <科目id> --taxonomy my/taxonomy.json` 可以按科目打印出来。
 
 ## 4. cards.json（知识卡）
 
