@@ -561,6 +561,26 @@ table.ltab tr:last-child td{border-bottom:2px solid var(--ink)}
   .lrow{grid-template-columns:34px minmax(0,1fr) 54px 54px 66px;gap:8px}
   .lrow .lbarw,.lrow .lacc{display:none}
 }
+
+/* sprint plan */
+.plset{display:flex;flex-direction:column;gap:10px}
+.plk{grid-template-columns:repeat(auto-fit,minmax(120px,1fr))}
+.plk b small{font-size:.5em;opacity:.6;margin-left:2px}
+.plbar{display:block;height:6px;border-radius:3px;background:var(--line);margin-top:8px;overflow:hidden}.plbar>i{display:block;height:100%;background:var(--accent);border-radius:3px}
+.plwarn{margin:0;padding:12px 14px;border-radius:10px;background:color-mix(in srgb,#E2725B 14%,transparent);font-size:13px}
+.pltasks{display:flex;flex-direction:column;gap:8px}
+.pltask{display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;background:color-mix(in srgb,currentColor 7%,transparent)}
+.pltask.done{opacity:.55}.pltask.done b{text-decoration:line-through}
+.plchk{width:20px;height:20px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font-size:12px;opacity:.8}
+.plt{display:flex;flex-direction:column;gap:2px;min-width:0}.plt small{opacity:.7;font-size:12px}
+.plcal{display:flex;flex-direction:column;padding:6px 14px}
+.plrow{display:grid;grid-template-columns:64px minmax(0,1fr) 64px;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.plrow:last-child{border-bottom:0}.plrow.rest{opacity:.55}.plrow.final .pld b{color:var(--accent)}
+.pld{display:flex;flex-direction:column}.pld small{color:var(--muted);font-size:11px}
+.plc{display:flex;flex-wrap:wrap;gap:6px}.plc .tag.p2{border-color:var(--accent);color:var(--accent)}.plc .tag.p3{border-style:dashed;border-color:var(--accent);color:var(--accent)}
+.plc .tag.mk{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.plm{text-align:right;color:var(--muted);font-size:12px}
+@media (max-width:640px){.plrow{grid-template-columns:48px minmax(0,1fr) 48px;gap:8px}}
 </style>
 
 <div class="app">
@@ -585,7 +605,7 @@ table.ltab tr:last-child td{border-bottom:2px solid var(--ink)}
 // ---------- constants
 let WEIGHTS={};let EXAM={secPer:90,session:90};
 const NAV=[
-  ['home','学习首页'],['chapter','章节练习'],['exam','模拟考试'],['book','错题本'],['sheet','考前一页纸'],['history','做题记录'],['report','学习报告'],['notes','我的笔记'],['import','导入题库']
+  ['home','学习首页'],['plan','冲刺计划'],['chapter','章节练习'],['exam','模拟考试'],['book','错题本'],['sheet','考前一页纸'],['history','做题记录'],['report','学习报告'],['notes','我的笔记'],['import','导入题库']
 ];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -755,7 +775,7 @@ function todaySet(){
 function navTo(v){if(S.session&&S.session.type==='exam'&&!S.session.done&&v!=='session'){S._pendingNav=v;render();return}S.view=v;S._pendingNav=null;try{history.replaceState(null,'','#'+v)}catch(e){}render();window.scrollTo(0,0)}
 function renderNav(){
   const b=statsFor(allIds()).due;
-  const items=NAV.map(([k,l])=>`<button data-nav="${k}" class="${S.view===k?'on':''}"><span>${l}</span>${k==='book'&&b?`<span class="cnt">${b}</span>`:''}</button>`).join('');
+  const items=NAV.map(([k,l])=>`<button data-nav="${k}" class="${S.view===k?'on':''}"><span>${l}</span>${k==='book'&&b?`<span class="cnt">${b}</span>`:''}${k==='plan'&&planLeftToday()?`<span class="cnt">${planLeftToday()}</span>`:''}</button>`).join('');
   const sess=S.session&&!S.session.done?`<button data-nav="session" class="${S.view==='session'?'on':''}"><span>${S.session.type==='exam'?(S.session.defer?'练习进行中':'考试进行中'):'继续练习'}</span><span class="cnt">${S.session.idx+1}/${S.session.ids.length}</span></button>`:'';
   const os=otherSaved();const rs=!sess&&os.length?`<button data-rs="${os[0].sid}"><span>继续上次</span><span class="cnt">${nDone(os[0])}/${os[0].ids.length}</span></button>`:'';
   $('#nav').innerHTML=`<div class="lab">学习空间</div>${sess}${rs}${items}`;
@@ -768,7 +788,7 @@ function render(){
   if(!S.loaded)return;
   renderNav();
   const v=$('#view');
-  const fn={home:vHome,chapter:vChapter,exam:vExam,book:vBook,history:vHistory,report:vReport,notes:vNotes,sheet:vSheet,import:vImport,session:vSession,result:vResult}[S.view]||vHome;
+  const fn={home:vHome,chapter:vChapter,exam:vExam,book:vBook,history:vHistory,report:vReport,notes:vNotes,sheet:vSheet,plan:vPlan,import:vImport,session:vSession,result:vResult}[S.view]||vHome;
   v.classList.toggle('sess-paused',!!(S.view==='session'&&S.session&&S.session.paused));
   v.innerHTML=fn();
   bind[S.view]&&bind[S.view]();
@@ -1532,6 +1552,132 @@ document.addEventListener('keydown',e=>{
   else if(k==='arrowleft')go(ss.idx-1);
 });
 
+// ---------- 冲刺计划 (sprint plan): practice questions x N passes + every mock before the exam
+function plSrcs(){const pc=pcfg();const all=SRCS.filter(s=>!s.mock).map(s=>s.id);const pick=(pc.srcs||[]).filter(x=>all.includes(x));return pick.length?pick:all}
+function pcfg(){S.cfg=S.cfg||{};const pc=S.cfg.pc=S.cfg.pc||{mode:'full',rest:0,ppm:2};if(!pc.pp)pc.pp='mix';if(pc.passes==null)pc.passes='3';return pc}
+function dKey(t){const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+const nOf=id=>{const r=S.prog[id];return (r&&r.n)||0};
+const qDone=id=>nOf(id)>0;
+const everWrong=id=>{const r=S.prog[id];return !!(r&&(r.w||r.u||r.b))};
+function ppIds(){const o=[];S.meta.readings.filter(r=>plSrcs().includes(r.src)).forEach(r=>S.byRead[r.id].forEach(id=>o.push([r.subject,id])));return o}
+function nPasses(){const p=pcfg().passes;return p==='3e'?3:+p}
+// does question id still need pass r? (pass 3 in "3e" mode only for questions ever missed / unsure)
+function needs(id,r,skip){if(skip&&skip.has(r+':'+id))return false;if(nOf(id)>=r)return false;if(r===3&&pcfg().passes==='3e'&&!everWrong(id))return false;return true}
+function roundPools(skip){const R=nPasses();const out=[];for(let r=1;r<=R;r++){const o={};S.meta.subjects.forEach(s=>o[s.id]=[]);ppIds().forEach(([sj,id])=>{if(needs(id,r,skip))o[sj].push(id)});out.push({r,left:o})}return out}
+function passStats(){const R=nPasses();const all=ppIds();const out=[];for(let r=1;r<=R;r++){let tot=0,done=0;all.forEach(([,id])=>{if(r===3&&pcfg().passes==='3e'&&!everWrong(id)&&nOf(id)<3)return;tot++;if(nOf(id)>=r)done++});out.push({r,tot,done})}return out}
+function mkSessions(){return S.meta.readings.filter(r=>isMock(r.src)).map(r=>({rid:r.id,title:r.title,mock:r.title.split(' · ')[0],done:S.byRead[r.id].every(qDone)}))}
+function subjOrder(left){return Object.keys(left).filter(k=>left[k].length).map(id=>{const x=statsFor(S.bySubj[id]);return {id,acc:x.acc==null?0.65:x.acc}}).sort((a,b)=>a.acc-b.acc||(WEIGHTS[b.id]||0)-(WEIGHTS[a.id]||0)).map(o=>o.id)}
+function subjPrio(){const o={};S.meta.subjects.forEach(s=>{const x=statsFor(S.bySubj[s.id]);const acc=x.acc==null?0.65:x.acc;o[s.id]=(WEIGHTS[s.id]||1)*Math.max(0.05,1.05-acc)});return o}
+const passMin=r=>{const pc=pcfg();return r===1?pc.ppm:pc.ppm*0.6};   // later passes go faster
+function buildPlan(day0,rounds,mocks){
+  const E=examTs();if(!E)return null;const pc=pcfg();
+  const days=[];for(let d=new Date(day0);startOfDay(d.getTime())<startOfDay(E);d.setDate(d.getDate()+1))days.push({t:startOfDay(d.getTime()),tasks:[],kind:'work'});
+  if(!days.length)return [];
+  const nRev=Math.min(2,days.length);days.slice(-nRev).forEach(d=>{d.kind='final';d.tasks.push({k:'final'})});
+  const work=days.slice(0,days.length-nRev).filter(d=>{if(pc.rest&&new Date(d.t).getDay()===0){d.kind='rest';return false}return true});
+  const units=[];
+  if(pc.mode==='full'){const by={};mocks.filter(m=>!m.done).forEach(m=>{(by[m.mock]=by[m.mock]||[]).push(m)});Object.values(by).forEach(a=>units.push(a))}
+  else mocks.filter(m=>!m.done).forEach(m=>units.push([m]));
+  const W=work.length,k=Math.min(units.length,W);let last=-1;
+  for(let j=0;j<k;j++){let idx=Math.round((j+1)*W/k)-1;if(idx<=last)idx=last+1;if(idx>W-1-(k-1-j))idx=W-1-(k-1-j);last=idx;work[idx].mk=units[j]}
+  if(units.length>W)units.slice(W).forEach((u,i)=>{const d=work[W-1-(i%Math.max(1,W))];if(d)d.mk=(d.mk||[]).concat(u)});
+  // practice pack: minutes needed across all passes, split over days by free capacity
+  const pools=rounds.map(R0=>({r:R0.r,left:Object.fromEntries(Object.entries(R0.left).map(([k,v])=>[k,v.slice()]))}));
+  const needMin=pools.reduce((a,P)=>a+Object.values(P.left).reduce((x,v)=>x+v.length,0)*passMin(P.r),0);
+  const wt=work.map(d=>!d.mk?1:(d.mk.length>=2?0.15:0.5));const sw=wt.reduce((a,b)=>a+b,0)||1;
+  const pr=subjPrio();let carry=0;
+  work.forEach((d,i)=>{
+    let budget=needMin*wt[i]/sw+carry;
+    for(const P of pools){const m=passMin(P.r);let n=Math.floor(budget/m+1e-9);if(n<=0)break;
+      const live=()=>Object.keys(P.left).filter(x=>P.left[x].length);if(!live().length)continue;
+      const by={};
+      if(pc.pp==='mix'){while(n>0){const L=live();if(!L.length)break;const s2=L.reduce((a,x)=>a+pr[x],0);const raw=L.map(x=>n*pr[x]/s2);const al=raw.map(Math.floor);let r2=n-al.reduce((a,b)=>a+b,0);
+          raw.map((v,j)=>[v-Math.floor(v),j]).sort((a,b)=>b[0]-a[0]).forEach(([,j])=>{if(r2>0){al[j]++;r2--}});
+          let got=0;L.forEach((x,j)=>{const c=Math.min(al[j],P.left[x].length);if(c){(by[x]=by[x]||[]).push(...P.left[x].splice(0,c));got+=c}});n-=got;budget-=got*m;if(!got)break}
+        const ids=[].concat(...Object.values(by));if(ids.length)d.tasks.push({k:'mix',r:P.r,ids,by:Object.fromEntries(Object.entries(by).map(([x,v])=>[x,v.length]))});
+      }else{for(const x of subjOrder(P.left)){if(n<=0)break;const c=Math.min(n,P.left[x].length);if(!c)continue;const ids=P.left[x].splice(0,c);d.tasks.push({k:'pp',r:P.r,sj:x,ids});n-=c;budget-=c*m}}
+      if(budget<passMin(P.r))break;
+    }
+    carry=Math.max(0,budget);
+    (d.mk||[]).forEach(mm=>d.tasks.push({k:'mock',rid:mm.rid,title:mm.title}));
+    d.tasks.push({k:'rev'});
+  });
+  // anything left by rounding goes onto the last work day
+  const lw=work[work.length-1];if(lw)pools.forEach(P=>Object.keys(P.left).forEach(x=>{if(P.left[x].length){lw.tasks.unshift({k:'pp',r:P.r,sj:x,ids:P.left[x].splice(0)})}}));
+  days.forEach(d=>{d.mins=d.tasks.reduce((a,t)=>a+(t.k==='pp'||t.k==='mix'?t.ids.length*passMin(t.r||1):t.k==='mock'?(S.byRead[t.rid]||[]).length*EXAM.secPer/60+45:t.k==='rev'?20:90),0)});
+  return days;
+}
+function planSig(){const pc=pcfg();return [S.cfg.exam||'',pc.mode,pc.rest,pc.ppm,pc.pp,pc.passes,plSrcs().join(',')].join('|')}
+function todayPlan(force){
+  if(!examTs())return null;const tk=dKey(Date.now());const P=S.cfg.plan;
+  if(!force&&P&&P.d===tk&&P.sig===planSig())return P;
+  const days=buildPlan(startOfDay(Date.now()),roundPools(),mkSessions());if(!days||!days.length)return null;
+  S.cfg.plan={d:tk,sig:planSig(),tasks:days[0].tasks,mins:days[0].mins,kind:days[0].kind};S.cfg.t=Date.now();markDirty('cfg');
+  return S.cfg.plan;
+}
+function taskProg(t){if(t.k==='pp'||t.k==='mix'){const r=t.r||1;return [t.ids.filter(id=>nOf(id)>=r).length,t.ids.length]}
+  if(t.k==='mock'){const ids=S.byRead[t.rid]||[];return [ids.filter(qDone).length,ids.length]}
+  if(t.k==='rev'){const due=statsFor(allIds()).due;return [due?0:1,1]}return [0,1]}
+function planLeftToday(){const P=examTs()&&S.cfg&&S.cfg.plan&&S.cfg.plan.d===dKey(Date.now())?S.cfg.plan:null;if(!P)return 0;return P.tasks.filter(t=>t.k!=='final'&&t.k!=='rev'&&(()=>{const [a,b]=taskProg(t);return a<b})()).length}
+function futurePlan(P){
+  const skip=new Set();P.tasks.forEach(t=>{if(t.k==='pp'||t.k==='mix')t.ids.forEach(id=>skip.add((t.r||1)+':'+id))});
+  const planned=new Set(P.tasks.filter(t=>t.k==='mock').map(t=>t.rid));
+  const mocks=mkSessions().map(m=>planned.has(m.rid)?Object.assign({},m,{done:true}):m);
+  const tm=new Date();tm.setDate(tm.getDate()+1);return buildPlan(startOfDay(tm.getTime()),roundPools(skip),mocks)||[];
+}
+const WD='日一二三四五六';
+function fmtMin(m){m=Math.round(m);return m>=60?`${Math.floor(m/60)}h${m%60?(' '+m%60+'m'):''}`:`${m}m`}
+function taskLabel(t,short){const pass=t.r&&nPasses()>1?`第${t.r}遍 `:'';
+  if(t.k==='pp')return `刷题 ${pass}· ${S.subj[t.sj].zh} ${t.ids.length} 题`;
+  if(t.k==='mix'){const parts=Object.entries(t.by||{}).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`${S.subj[k].zh} ${n}`);return `刷题 ${pass}混合 ${t.ids.length} 题`+(short?'':`（${parts.join(' · ')}）`)}
+  if(t.k==='mock')return t.title;if(t.k==='rev')return '复习到期错题';return '考前一页纸 + 错题 + 知识卡，不做新题'}
+function vPlan(){
+  const pc=pcfg();const D=daysToExam();const ps=passStats();const ms=mkSessions();const mdone=ms.filter(m=>m.done).length;
+  const head=`<div><div class="eyebrow">冲刺计划</div><h1>考前把 <em>题库和 Mock</em> 全部刷完</h1>
+  <p class="sub">按你现在的进度，把剩下的题摊到考前每一天：题库一遍刷完再开下一遍，同一道题两遍之间自然隔开；混合模式按「考纲权重 × 弱项」分题，专项模式按科目从弱到强；Mock 均匀插进去，最后 2 天只复习。每天打开都会按最新进度重排，落下的自动摊到后面。</p></div>`;
+  const chip=(attr,val,cur,label)=>`<button class="chip ${String(cur)===String(val)?'on':''}" data-${attr}="${val}">${label}</button>`;
+  const lab=t=>`<span class="eyebrow" style="align-self:center">${t}</span>`;
+  const setDate=`<div class="panel plset"><label class="exd">考试日期 <input type="date" id="plEx" value="${esc((S.cfg&&S.cfg.exam)||'')}"></label>
+    <div class="chips">${lab('刷几遍')}${[['1','1 遍'],['2','2 遍'],['3','3 遍'],['3e','3 遍 · 第 3 遍只刷错过的']].map(([k,l])=>chip('plv',k,pc.passes,l)).join('')}</div>
+    ${SRCS.filter(s=>!s.mock).length>1?`<div class="chips">${lab('题库范围')}${SRCS.filter(s=>!s.mock).map(s=>`<button class="chip ${plSrcs().includes(s.id)?'on':''}" data-pls="${s.id}">${esc(s.short||s.name)}</button>`).join('')}</div>`:''}
+    <div class="chips">${lab('练习安排')}${[['mix','每天混合 · 按权重×弱项'],['block','按科目专项']].map(([k,l])=>chip('plq',k,pc.pp,l)).join('')}</div>
+    <div class="chips">${lab('Mock 安排')}${[['full','整套一天做完'],['half','一天一场 Session']].map(([k,l])=>chip('plm',k,pc.mode,l)).join('')}</div>
+    <div class="chips">${lab('周日')}${[[0,'照常'],[1,'休息']].map(([k,l])=>chip('plr',k,+pc.rest,l)).join('')}
+    <span style="width:8px"></span>${lab('第 1 遍每题')}${[[1.5,'1.5 分钟'],[2,'2 分钟'],[3,'3 分钟']].map(([k,l])=>chip('plp',k,pc.ppm,l)).join('')}<span class="sub" style="align-self:center;font-size:12px">第 2、3 遍按 6 折</span></div></div>`;
+  const kp=ps.map(p=>`<div><span class="eyebrow">第 ${p.r} 遍</span><b class="num">${p.done}<small>/${p.tot}</small></b><i class="plbar"><i style="width:${p.tot?p.done/p.tot*100:0}%"></i></i></div>`).join('');
+  const totals=`<div class="kpis plk" style="grid-template-columns:repeat(${ps.length+2},minmax(0,1fr))">${kp}
+    <div><span class="eyebrow">Mock Session</span><b class="num">${mdone}<small>/${ms.length}</small></b><i class="plbar"><i style="width:${ms.length?mdone/ms.length*100:0}%"></i></i></div>
+    <div><span class="eyebrow">距考试</span><b class="num">${D==null?'-':D}<small> 天</small></b></div></div>`;
+  if(D==null)return head+setDate+totals+`<div class="panel"><b>先设置考试日期</b><p class="sub" style="margin:6px 0 0">有了日期才能把剩下的题摊到每一天。</p></div>`;
+  if(D<=0)return head+setDate+totals+`<div class="panel"><b>考试日期已过</b></div>`;
+  const P=todayPlan();if(!P)return head+setDate+totals;
+  const fut=futurePlan(P);const all=[{t:startOfDay(Date.now()),tasks:P.tasks,mins:P.mins,kind:P.kind}].concat(fut);
+  const work=all.filter(d=>d.kind==='work');const avgMin=work.length?work.reduce((a,d)=>a+d.mins,0)/work.length:0;
+  const ppPer=work.length?Math.round(work.reduce((a,d)=>a+d.tasks.filter(t=>t.k==='pp'||t.k==='mix').reduce((x,t)=>x+t.ids.length,0),0)/work.length):0;
+  const warn=avgMin>300?`<p class="plwarn">平均每天要 ${fmtMin(avgMin)}，偏重。可以试试：第 3 遍只刷错过的题，或 Mock 改成「一天一场」。真到最后一周还做不完，优先保 Mock 和高权重弱科。</p>`:'';
+  const tasksHtml=P.tasks.map((t,i)=>{const [a,b]=taskProg(t);const ok=a>=b;const isQ=t.k==='pp'||t.k==='mix';
+    const btn=isQ?(ok?'':`<button class="btn sm pri" data-plgo="${i}">${a?'继续':'开始'}</button>`):t.k==='mock'?(ok?'':`<button class="btn sm pri" data-plgo="${i}">${a?'继续':'开始考试'}</button>`):t.k==='rev'?`<button class="btn sm" data-nav="book">去错题本</button>`:`<button class="btn sm" data-nav="sheet">考前一页纸</button>`;
+    return `<div class="pltask ${ok&&t.k!=='final'?'done':''}"><span class="plchk">${ok&&t.k!=='final'?'✓':''}</span><span class="plt"><b>${esc(taskLabel(t))}</b>${isQ||t.k==='mock'?`<small>${a}/${b}</small>`:t.k==='rev'?`<small>今天到期 ${statsFor(allIds()).due} 题</small>`:''}</span>${btn}</div>`}).join('');
+  const nd=P.tasks.filter(t=>t.k==='pp'||t.k==='mix'||t.k==='mock');const pct=nd.length?Math.round(nd.reduce((a,t)=>{const [x,y]=taskProg(t);return a+x/y},0)/nd.length*100):100;
+  const today=`<section class="today pltoday"><div><div class="eyebrow">今天 · ${new Date().toLocaleDateString('zh-CN',{month:'numeric',day:'numeric'})} 周${WD[new Date().getDay()]} · 约 ${fmtMin(P.mins)}</div><h2 style="margin-top:8px">${P.kind==='rest'?'今天休息，想做就刷刷错题':P.kind==='final'?'最后两天，只复习不做新题':`今日完成 ${pct}%`}</h2></div><div class="pltasks">${tasksHtml}</div>
+    <div class="row" style="gap:12px;justify-content:space-between"><span class="sub" style="color:inherit;opacity:.75">平均每天约 ${ppPer} 道题 + ${fmtMin(avgMin)}</span><button class="link" id="plRe" style="color:inherit">按最新进度重排今天</button></div></section>`;
+  const rows=fut.map(d=>{const dt=new Date(d.t);const mk=d.tasks.some(t=>t.k==='mock');
+    return `<div class="plrow ${d.kind} ${mk?'mk':''}"><span class="pld"><b>${dt.getMonth()+1}/${dt.getDate()}</b><small>周${WD[dt.getDay()]}</small></span><span class="plc">${d.kind==='rest'?'<span class="tag">休息</span>':d.tasks.filter(t=>t.k!=='rev').map(t=>`<span class="tag ${t.k==='mock'?'mk':''} ${t.r>1?'p'+t.r:''}" title="${esc(taskLabel(t))}">${esc(taskLabel(t,true))}</span>`).join('')}</span><span class="plm num">${d.kind==='rest'?'':fmtMin(d.mins)}</span></div>`}).join('');
+  return head+setDate+totals+warn+today+`<section style="display:flex;flex-direction:column;gap:10px"><div class="sec-h"><h2>接下来</h2><span class="eyebrow">每天按最新进度重排</span></div><div class="panel plcal">${rows||'<p class="sub">没有后续安排了。</p>'}</div></section>`;
+}
+bind.plan=()=>{
+  const pc=pcfg();const save=()=>{S.cfg.t=Date.now();markDirty('cfg');render()};
+  const ex=$('#plEx');if(ex)ex.onchange=()=>{S.cfg.exam=ex.value||'';reclampAll();toast(ex.value?'考试日期已设置，计划已生成':'已清除考试日期');save()};
+  const on=(a,f)=>document.querySelectorAll(`[data-${a}]`).forEach(b=>b.onclick=()=>{f(b.dataset[a.replace(/-./g,x=>x[1].toUpperCase())]);save()});
+  document.querySelectorAll('[data-pls]').forEach(b=>b.onclick=()=>{const cur=plSrcs().slice();const id=b.dataset.pls;const i=cur.indexOf(id);if(i>=0){if(cur.length>1)cur.splice(i,1)}else cur.push(id);pc.srcs=cur;save()});
+  on('plv',v=>pc.passes=v);on('plq',v=>pc.pp=v);on('plm',v=>pc.mode=v);on('plr',v=>pc.rest=+v);on('plp',v=>pc.ppm=+v);
+  const re=$('#plRe');if(re)re.onclick=()=>{todayPlan(true);toast('已按最新进度重排今天');render()};
+  document.querySelectorAll('[data-plgo]').forEach(b=>b.onclick=()=>{const t=S.cfg.plan.tasks[+b.dataset.plgo];const r=t.r||1;
+    if(t.k==='pp'||t.k==='mix'){let ids=t.ids.filter(id=>nOf(id)<r);if(t.k==='mix')ids=shuffle(ids);
+      startSession({type:'practice',ids,title:`冲刺 · ${nPasses()>1?'第'+r+'遍 · ':''}${t.k==='mix'?'混合':S.subj[t.sj].zh} · ${ids.length} 题`})}
+    else if(t.k==='mock'){const g=S.read[t.rid];startSession({type:'exam',ids:S.byRead[g.id].slice(),title:g.title,limit:S.byRead[g.id].length*EXAM.secPer,g:g.id})}});
+};
+
 // ---------- local bank storage (IndexedDB) + import / export
 const IDB={
   open(){return new Promise((res,rej)=>{const r=indexedDB.open('studyroom',1);r.onupgradeneeded=()=>r.result.createObjectStore('kv');r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})},
@@ -1693,7 +1839,7 @@ function confirmBox(text){const now=Date.now();if(confirmBox._t&&now-confirmBox.
 (async function(){
   lsLoad();loadSaved();try{S.mode=localStorage.getItem('cfa1-mode')||'instant';S.enOpen=!!localStorage.getItem('cfa1-en');S.trOn=!!localStorage.getItem('cfa1-tr');S.glOn=localStorage.getItem('cfa1-gl')!=='0'}catch(e){S.mode='instant'}
   try{await loadData()}catch(e){$('#view').innerHTML='<div class="empty"><b>题库没有载入成功</b>请刷新页面再试一次。</div>';return}
-  const h=(location.hash||'').slice(1);if(['home','chapter','exam','book','sheet','history','report','notes','import'].includes(h))S.view=h;
+  const h=(location.hash||'').slice(1);if(['home','plan','chapter','exam','book','sheet','history','report','notes','import'].includes(h))S.view=h;
   render();
   initDB();
 })();
