@@ -107,6 +107,11 @@ h3{font-size:15px;margin:0;font-weight:600}
 .bar{height:5px;background:var(--soft);border-radius:3px;overflow:hidden;display:flex}
 .bar i{display:block;height:100%;background:var(--accent)}
 .bar i.g{background:var(--good)} .bar i.b{background:var(--bad)}
+.bar i.m{background:repeating-linear-gradient(135deg,var(--muted) 0 3px,transparent 3px 6px);opacity:.55}
+.mkt{color:var(--accent)}
+.mkbar{gap:10px;flex-wrap:wrap;justify-content:space-between;padding:4px 2px}
+.plmk summary{cursor:pointer;list-style:none}.plmk summary::-webkit-details-marker{display:none}
+.plmkg{display:flex;flex-direction:column;gap:6px;margin-top:12px}.plmkr{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;align-items:center}
 .subj .meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
 .next{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
 .next .panel{display:flex;flex-direction:column;gap:8px;padding:18px}
@@ -10492,8 +10497,8 @@ function vChapter(){
   const srcTabs=SRCS.map(s=>[s.id,esc(s.name)]).map(([k,l])=>{const n=S.meta.readings.filter(r=>r.src===k).reduce((a,r)=>a+r.count,0);return `<button class="chip ${c.src===k?'on':''}" data-src="${k}">${l} <span class="num" style="opacity:.7">${n.toLocaleString()}</span></button>`}).join('');
   const chips=isMock(c.src)?'':S.meta.subjects.map(s=>{const n=S.meta.readings.filter(r=>r.src===c.src&&r.subject===s.id).reduce((a,r)=>a+r.count,0);return n?`<button class="chip ${c.subject===s.id?'on':''}" data-cs="${s.id}">${s.zh}</button>`:''}).join('');
   const rows=rs.map(r=>{const x=statsFor(S.byRead[r.id]);
-    return `<label class="ritem"><input type="checkbox" data-r="${r.id}" ${c.sel.has(r.id)?'checked':''}><span class="t"><b>${r.num?'Reading '+r.num+' · ':''}${esc(r.title)}${r.free?' <span class="tag">免费卷</span>':''}</b><small>${r.file?esc(r.file)+' · ':''}${r.count} 题${x.book?` · 待复习 ${x.book}`:''}</small></span>
-    <span class="bar"><i class="g" style="width:${x.done?(x.first/x.total*100):0}%"></i><i class="b" style="width:${x.done?((x.done-x.first)/x.total*100):0}%"></i></span>
+    return `<label class="ritem"><input type="checkbox" data-r="${r.id}" ${c.sel.has(r.id)?'checked':''}><span class="t"><b>${r.num?'Reading '+r.num+' · ':''}${esc(r.title)}${r.free?' <span class="tag">免费卷</span>':''}</b><small>${r.file?esc(r.file)+' · ':''}${r.count} 题${x.book?` · 待复习 ${x.book}`:''}${mkOf(r.id)?` · <span class="mkt">已标做完 ${mkOf(r.id)} 遍</span>`:''}</small></span>
+    <span class="bar"><i class="g" style="width:${x.done?(x.first/x.total*100):0}%"></i><i class="b" style="width:${x.done?((x.done-x.first)/x.total*100):0}%"></i>${mkOf(r.id)&&x.done<x.total?`<i class="m" style="width:${(x.total-x.done)/x.total*100}%"></i>`:''}</span>
     <span class="pct">${x.done}/${x.total}${x.acc!=null?' · '+Math.round(x.acc*100)+'%':''}</span></label>`}).join('');
   const pool=chapterPool();
   const res=c.q.trim().length>=2?searchQ(c.q.trim()):null;
@@ -10502,6 +10507,7 @@ function vChapter(){
   ${chips?`<div class="chips">${chips}</div>`:'<p class="sub" style="margin:0">Mock 可以按卷练习；想按考场节奏整卷计时做，去「模拟考试」。</p>'}
   <div class="row" style="justify-content:space-between"><button class="link" id="selAll">${rs.every(r=>c.sel.has(r.id))?'取消全选':(isMock(c.src)?'全选':'全选本科目')}</button><span class="eyebrow">${isMock(c.src)?'Mock':S.subj[c.subject].en+' · '+srcDef(c.src).name}</span></div>
   <div class="rlist">${rows}</div>
+  ${c.sel.size?`<div class="row mkbar"><span class="sub" style="margin:0">在别处做过？把选中的 ${c.sel.size} 个章节标为已做</span><span class="chips">${[1,2,3].map(k=>`<button class="chip" data-chmk="${k}">${k} 遍</button>`).join('')}<button class="chip" data-chmk="0">取消标记</button></span></div>`:''}
   <div class="panel" style="display:flex;flex-direction:column;gap:18px">
     <div class="opts">
       <div><label class="h">题量</label><div class="chips">${[10,20,40,0].map(n=>`<button class="chip ${c.count===n?'on':''}" data-cnt="${n}">${n||'全部'}</button>`).join('')}</div></div>
@@ -10535,6 +10541,7 @@ bind.chapter=()=>{
   document.querySelectorAll('[data-cs]').forEach(b=>b.onclick=()=>{c.subject=b.dataset.cs;render()});
   document.querySelectorAll('[data-src]').forEach(b=>b.onclick=()=>{c.src=b.dataset.src;c.sel=new Set();render()});
   document.querySelectorAll('[data-r]').forEach(b=>b.onchange=()=>{b.checked?c.sel.add(b.dataset.r):c.sel.delete(b.dataset.r);render()});
+  document.querySelectorAll('[data-chmk]').forEach(b=>b.onclick=()=>{const k=+b.dataset.chmk;setMk([...c.sel],k);toast(k?`已把 ${c.sel.size} 个章节标为做完 ${k} 遍（不计入正确率）`:'已取消标记');render()});
   $('#selAll').onclick=()=>{const rs=isMock(c.src)?S.meta.readings.filter(r=>isMock(r.src)):S.meta.readings.filter(r=>r.src===c.src&&r.subject===c.subject);const all=rs.every(r=>c.sel.has(r.id));rs.forEach(r=>all?c.sel.delete(r.id):c.sel.add(r.id));render()};
   document.querySelectorAll('[data-cnt]').forEach(b=>b.onclick=()=>{c.count=+b.dataset.cnt;render()});
   document.querySelectorAll('[data-scope]').forEach(b=>b.onclick=()=>{c.scope=b.dataset.scope;render()});
@@ -11128,7 +11135,7 @@ document.addEventListener('keydown',e=>{
 function plSrcs(){const pc=pcfg();const all=SRCS.filter(s=>!s.mock).map(s=>s.id);const pick=(pc.srcs||[]).filter(x=>all.includes(x));return pick.length?pick:all}
 function pcfg(){S.cfg=S.cfg||{};const pc=S.cfg.pc=S.cfg.pc||{mode:'full',rest:0,ppm:2};if(!pc.pp)pc.pp='mix';if(pc.passes==null)pc.passes='3';return pc}
 function dKey(t){const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
-const nOf=id=>{const r=S.prog[id];return (r&&r.n)||0};
+const nOf=id=>{const r=S.prog[id];const q=S.Q[id];return Math.max((r&&r.n)||0,q?mkOf(q.r):0)};
 const qDone=id=>nOf(id)>0;
 const everWrong=id=>{const r=S.prog[id];return !!(r&&(r.w||r.u||r.b))};
 function ppIds(){const o=[];S.meta.readings.filter(r=>plSrcs().includes(r.src)).forEach(r=>S.byRead[r.id].forEach(id=>o.push([r.subject,id])));return o}
@@ -11197,6 +11204,14 @@ function futurePlan(P){
   const mocks=mkSessions().map(m=>planned.has(m.rid)?Object.assign({},m,{done:true}):m);
   const tm=new Date();tm.setDate(tm.getDate()+1);return buildPlan(startOfDay(tm.getTime()),roundPools(skip),mocks)||[];
 }
+function ppReads(){return S.meta.readings.filter(r=>plSrcs().includes(r.src))}
+function mkOf(rid){return ((S.cfg&&S.cfg.mk)||{})[rid]||0}
+function setMk(rids,k){S.cfg=S.cfg||{};S.cfg.mk=S.cfg.mk||{};rids.forEach(r=>{if(k>0)S.cfg.mk[r]=k;else delete S.cfg.mk[r]});S.cfg.t=Date.now();markDirty('cfg')}
+function vMarkGrid(){const R=nPasses();const rs=ppReads();const subs=S.meta.subjects.filter(s=>rs.some(r=>r.subject===s.id));if(!subs.length)return '';
+  const lvl=sj=>Math.min(...rs.filter(r=>r.subject===sj).map(r=>mkOf(r.id)));
+  return `<details class="panel plmk" ${S._mkOpen?'open':''}><summary><b>在别处做过的，直接标记</b><span class="sub" style="margin-left:8px">比如已经在纸上或别的平台刷过的科目。只影响冲刺计划和进度，不影响正确率和错题本</span></summary>
+  <div class="plmkg">${subs.map(s=>{const L=lvl(s.id);return `<div class="plmkr"><span>${esc(s.zh)}</span><span class="chips">${Array.from({length:R},(_,i)=>i+1).map(r=>`<button class="chip ${L>=r?'on':''}" data-plmk="${s.id}:${r}">第 ${r} 遍${L>=r?' ✓':''}</button>`).join('')}</span></div>`}).join('')}</div>
+  <p class="sub" style="margin:10px 0 0">只做了某科的一部分章节？去「章节练习」勾选那些章节，用列表下面的「标为已做」。</p></details>`}
 const WD='日一二三四五六';
 function fmtMin(m){m=Math.round(m);return m>=60?`${Math.floor(m/60)}h${m%60?(' '+m%60+'m'):''}`:`${m}m`}
 function taskLabel(t,short){const pass=t.r&&nPasses()>1?`第${t.r}遍 `:'';
@@ -11220,7 +11235,7 @@ function vPlan(){
   const totals=`<div class="kpis plk" style="grid-template-columns:repeat(${ps.length+2},minmax(0,1fr))">${kp}
     <div><span class="eyebrow">Mock Session</span><b class="num">${mdone}<small>/${ms.length}</small></b><i class="plbar"><i style="width:${ms.length?mdone/ms.length*100:0}%"></i></i></div>
     <div><span class="eyebrow">距考试</span><b class="num">${D==null?'-':D}<small> 天</small></b></div></div>`;
-  if(D==null)return head+setDate+totals+`<div class="panel"><b>先设置考试日期</b><p class="sub" style="margin:6px 0 0">有了日期才能把剩下的题摊到每一天。</p></div>`;
+  if(D==null)return head+setDate+totals+vMarkGrid()+`<div class="panel"><b>先设置考试日期</b><p class="sub" style="margin:6px 0 0">有了日期才能把剩下的题摊到每一天。</p></div>`;
   if(D<=0)return head+setDate+totals+`<div class="panel"><b>考试日期已过</b></div>`;
   const P=todayPlan();if(!P)return head+setDate+totals;
   const fut=futurePlan(P);const all=[{t:startOfDay(Date.now()),tasks:P.tasks,mins:P.mins,kind:P.kind}].concat(fut);
@@ -11235,7 +11250,7 @@ function vPlan(){
     <div class="row" style="gap:12px;justify-content:space-between"><span class="sub" style="color:inherit;opacity:.75">平均每天约 ${ppPer} 道题 + ${fmtMin(avgMin)}</span><button class="link" id="plRe" style="color:inherit">按最新进度重排今天</button></div></section>`;
   const rows=fut.map(d=>{const dt=new Date(d.t);const mk=d.tasks.some(t=>t.k==='mock');
     return `<div class="plrow ${d.kind} ${mk?'mk':''}"><span class="pld"><b>${dt.getMonth()+1}/${dt.getDate()}</b><small>周${WD[dt.getDay()]}</small></span><span class="plc">${d.kind==='rest'?'<span class="tag">休息</span>':d.tasks.filter(t=>t.k!=='rev').map(t=>`<span class="tag ${t.k==='mock'?'mk':''} ${t.r>1?'p'+t.r:''}" title="${esc(taskLabel(t))}">${esc(taskLabel(t,true))}</span>`).join('')}</span><span class="plm num">${d.kind==='rest'?'':fmtMin(d.mins)}</span></div>`}).join('');
-  return head+setDate+totals+warn+today+`<section style="display:flex;flex-direction:column;gap:10px"><div class="sec-h"><h2>接下来</h2><span class="eyebrow">每天按最新进度重排</span></div><div class="panel plcal">${rows||'<p class="sub">没有后续安排了。</p>'}</div></section>`;
+  return head+setDate+totals+vMarkGrid()+warn+today+`<section style="display:flex;flex-direction:column;gap:10px"><div class="sec-h"><h2>接下来</h2><span class="eyebrow">每天按最新进度重排</span></div><div class="panel plcal">${rows||'<p class="sub">没有后续安排了。</p>'}</div></section>`;
 }
 bind.plan=()=>{
   const pc=pcfg();const save=()=>{S.cfg.t=Date.now();markDirty('cfg');render()};
@@ -11243,6 +11258,9 @@ bind.plan=()=>{
   const on=(a,f)=>document.querySelectorAll(`[data-${a}]`).forEach(b=>b.onclick=()=>{f(b.dataset[a.replace(/-./g,x=>x[1].toUpperCase())]);save()});
   document.querySelectorAll('[data-pls]').forEach(b=>b.onclick=()=>{const cur=plSrcs().slice();const id=b.dataset.pls;const i=cur.indexOf(id);if(i>=0){if(cur.length>1)cur.splice(i,1)}else cur.push(id);pc.srcs=cur;save()});
   on('plv',v=>pc.passes=v);on('plq',v=>pc.pp=v);on('plm',v=>pc.mode=v);on('plr',v=>pc.rest=+v);on('plp',v=>pc.ppm=+v);
+  const mkd=document.querySelector('details.plmk');if(mkd)mkd.ontoggle=()=>{S._mkOpen=mkd.open};
+  document.querySelectorAll('[data-plmk]').forEach(b=>b.onclick=()=>{const [sj,r0]=b.dataset.plmk.split(':');const r=+r0;const rids=ppReads().filter(x=>x.subject===sj).map(x=>x.id);
+    const L=Math.min(...rids.map(mkOf));setMk(rids,L>=r?r-1:r);todayPlan(true);toast(L>=r?`${S.subj[sj].zh} 第 ${r} 遍已取消标记`:`${S.subj[sj].zh} 已标记做完第 ${r} 遍`);render()});
   const re=$('#plRe');if(re)re.onclick=()=>{todayPlan(true);toast('已按最新进度重排今天');render()};
   document.querySelectorAll('[data-plgo]').forEach(b=>b.onclick=()=>{const t=S.cfg.plan.tasks[+b.dataset.plgo];const r=t.r||1;
     if(t.k==='pp'||t.k==='mix'){let ids=t.ids.filter(id=>nOf(id)<r);if(t.k==='mix')ids=shuffle(ids);
